@@ -8,7 +8,7 @@
 <%@attribute name="header" fragment="true" %>
 <%@attribute name="footer" fragment="true" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,7 +16,6 @@
         
         <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/js/libs/twitter-bootstrap/css/bootstrap.css" />
         <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/js/libs/twitter-bootstrap/css/style.css" />
-        
         <script src="${pageContext.request.contextPath}/js/libs/jquery.min.js" type="text/javascript"></script>
         <script src="${pageContext.request.contextPath}/js/libs/twitter-bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script src="${pageContext.request.contextPath}/js/libs/custom.js" type="text/javascript"></script>
