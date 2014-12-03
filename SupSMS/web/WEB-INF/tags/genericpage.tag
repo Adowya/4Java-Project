@@ -38,8 +38,7 @@
                 <div class="clearfix"></div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav nav-stacked" id="menu-bar">
-                        <c:url value="/index" var="indexUrl" />
-                        <li><a href="${indexUrl}">Index</a></li>
+                        <li><a href="${homeUrl}">Index</a></li>
                         
                         <c:url value="/offer" var="offerUrl" />
                         <li><a href="${offerUrl}">Offer page</a></li>

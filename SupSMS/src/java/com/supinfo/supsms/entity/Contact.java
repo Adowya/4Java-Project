@@ -8,40 +8,35 @@ package com.supinfo.supsms.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 
 /**
  *
  * @author Clement
  */
 @Entity
-public class Customer implements Serializable {
+public class Contact implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private String first_name;
-    private String last_name;
-    private String password;
-    private String email;
     private Long phone;
-    private Long card;
+    private String last_name;
+    private String first_name;
+    private Long zip;
+    private String email;
     
-    private Set<Contact> contact;
-    private Invoice invoice;
+    private Set<Customer> customer;
     private Sms sms;
     
-    @NotNull
-    @Column(nullable=false)
+    private Date update;
     private Date created;
     
-    public Customer(){
+    public Contact(){
         super();
     }
     

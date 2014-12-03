@@ -20,28 +20,25 @@ import javax.validation.constraints.NotNull;
  * @author Clement
  */
 @Entity
-public class Customer implements Serializable {
+public class Invoice implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private String first_name;
-    private String last_name;
-    private String password;
-    private String email;
-    private Long phone;
-    private Long card;
+    @NotNull
+    @Column(nullable=false)
+    private Long price;
     
-    private Set<Contact> contact;
-    private Invoice invoice;
-    private Sms sms;
+    private Customer _customer;
+    private Set<Customer> customer;
     
     @NotNull
     @Column(nullable=false)
     private Date created;
     
-    public Customer(){
+    
+    public Invoice(){
         super();
     }
     
