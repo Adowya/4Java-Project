@@ -5,25 +5,21 @@
 */
 package com.supinfo.supsms.entity;
 
-import java.util.Set;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Clement
  */
 @Entity
-public class User extends Customer {
+@Table(name = "users")
+@XmlRootElement
+public class Users extends Customer {
     
     private Long card;
-    private Boolean role;
+    private Boolean role_member;
     
-    
-    @ManyToOne @JoinColumn
-    private Invoice invoice;
-    @ManyToOne @JoinColumn
-    private Sms sms;
+
 }

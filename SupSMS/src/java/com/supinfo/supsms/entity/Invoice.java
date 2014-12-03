@@ -7,19 +7,24 @@ package com.supinfo.supsms.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Clement
  */
 @Entity
+@Table(name = "invoice")
+@XmlRootElement
 public class Invoice implements Serializable {
     
     @Id
@@ -30,8 +35,9 @@ public class Invoice implements Serializable {
     @Column(nullable=false)
     private Long price;
     
-    private Customer _customer;
-    private Set<Customer> customer;
+    @ManyToOne
+    @JoinColumn(name = "fk_users")
+    private Users _users;
     
     @NotNull
     @Column(nullable=false)

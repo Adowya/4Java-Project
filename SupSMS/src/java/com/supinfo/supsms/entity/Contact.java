@@ -7,22 +7,20 @@ package com.supinfo.supsms.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Set;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 /**
  *
  * @author Clement
  */
 @Entity
+@Table(name = "contact")
+@XmlRootElement
 public class Contact extends Customer implements Serializable {
     
     private Date update;
         
-    @ManyToOne @JoinColumn
-    private Sms sms;
-    
     public Contact(){
         super();
     }
