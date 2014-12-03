@@ -53,6 +53,10 @@ html, body {
     color: white;
 }
 
+.panel-title {
+    font-size: 34px;
+}
+
 h2 {
     color: #3278b3;
 }
@@ -60,5 +64,4 @@ h2 {
 p {
     color: #66afe9;
     font-size: 20px;
-    
 }
