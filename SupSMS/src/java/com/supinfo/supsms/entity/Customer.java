@@ -13,6 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -20,7 +22,8 @@ import javax.validation.constraints.NotNull;
  * @author Clement
  */
 @Entity
-public class Customer implements Serializable {
+@Inheritance (strategy=InheritanceType.JOINED)
+public abstract class Customer implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,12 +33,10 @@ public class Customer implements Serializable {
     private String last_name;
     private String password;
     private String email;
-    private Long phone;
-    private Long card;
     
-    private Set<Contact> contact;
-    private Invoice invoice;
-    private Sms sms;
+    @NotNull
+    @Column(nullable=false)
+    private Long phone;
     
     @NotNull
     @Column(nullable=false)

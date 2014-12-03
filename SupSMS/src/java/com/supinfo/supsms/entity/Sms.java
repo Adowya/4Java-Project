@@ -23,13 +23,9 @@ public class Sms implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
 	private String text;
-
 	private Contact _contact;
 	private Customer _customer;
-	private Set<Contact> contact;
-	private Set<Customer> customer;
 
 	private Date created;
 

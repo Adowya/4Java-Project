@@ -5,26 +5,25 @@
 */
 package com.supinfo.supsms.entity;
 
-import java.io.Serializable;
-import java.util.Date;
 import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 /**
  *
  * @author Clement
  */
 @Entity
-public class Contact extends Customer implements Serializable {
+public class User extends Customer {
     
-    private Date update;
-        
+    private Long card;
+    private Boolean role;
+    
+    
+    @ManyToOne @JoinColumn
+    private Invoice invoice;
     @ManyToOne @JoinColumn
     private Sms sms;
-    
-    public Contact(){
-        super();
-    }
-    
 }
