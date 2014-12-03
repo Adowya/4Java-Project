@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -41,11 +43,70 @@ public class Invoice implements Serializable {
     
     @NotNull
     @Column(nullable=false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date created;
     
     
     public Invoice(){
         super();
     }
+    
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+    
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
+    /**
+     * @return the price
+     */
+    public Long getPrice() {
+        return price;
+    }
+    
+    /**
+     * @param price the price to set
+     */
+    public void setPrice(Long price) {
+        this.price = price;
+    }
+    
+    /**
+     * @return the _users
+     */
+    public Users getUsers() {
+        return _users;
+    }
+    
+    /**
+     * @param _users the _users to set
+     */
+    public void setUsers(Users _users) {
+        this._users = _users;
+    }
+    
+    /**
+     * @return the created
+     */
+    public Date getCreated() {
+        return created;
+    }
+    
+    /**
+     * @param created the created to set
+     */
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+    
+    
     
 }
