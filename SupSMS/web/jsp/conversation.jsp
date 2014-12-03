@@ -17,9 +17,51 @@
             <div class="row">
                 <div class="col-lg-6 full-height">
                     <h1>Conversation</h1>
+                    <div class="container">
+                        <div class="bubble">
+                            Blue text bubble
+                        </div>
+                            
+                        <div class="bubble bubble--alt">
+                            Green text bubble
+                        </div>
+                            
+                        <div class="bubble">
+                            A bubble containing lots and lots and lots and lots of content on multiple lines
+                        </div>
+                            
+                        <div class="bubble bubble--alt">
+                            Bubble with image
+                        </div>
+                            
+                        <div class="bubble">
+                            Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
+                        </div>
+                            
+                    </div>
                 </div>
                 <div class="col-md-6 conv full-height">
                     <h1>Contact List</h1>
+                    <ol class="widget-list" id="developers">
+                        <li>
+                            <a class="widget-list-link">
+                                <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
+                                Joe Doe #1 <span>489218E3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="widget-list-link">
+                                <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
+                                Jacky Chann #2 <span>9082173</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="widget-list-link">
+                                <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
+                                Developer #3 <span>837E7</span>
+                            </a>
+                        </li>
+                    </ol>
                     <table>
                         <thead>
                         <th>Nickname</th>
