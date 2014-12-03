@@ -22,7 +22,7 @@
                         <form class="login" action="login" method="post">
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
-                                    <span style="color: #66afe9;" class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> 
+                                    <span style="color: #66afe9;" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 
                                 </span>
                                 <input type="email" name="email" class="form-control" placeholder="Email">
                             </div>
@@ -43,21 +43,21 @@
                             <br />
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
-                                    <span style="color: #66afe9;" class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> 
+                                    <span style="color: #66afe9;" class="glyphicon glyphicon-home" aria-hidden="true"></span> 
                                 </span>
                                 <input type="text" name="zip" class="form-control" placeholder="Zip">
                             </div>
                             <br />
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
-                                    <span style="color: #66afe9;" class="glyphicon glyphicon-phone" aria-hidden="true"></span> 
+                                    <span style="color: #66afe9;" class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 
                                 </span>
                                 <input type="text" name="phone" class="form-control" placeholder="Phone number">
                             </div>
                             <br />
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
-                                    <span style="color: #66afe9;" class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> 
+                                    <span style="color: #66afe9;" class="glyphicon glyphicon-lock" aria-hidden="true"></span> 
                                 </span>
                                 <input type="password" name="password" name="password" class="form-control" placeholder="Password">
                             </div>
