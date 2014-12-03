@@ -13,23 +13,36 @@
     <jsp:attribute name="header">
     </jsp:attribute>
     <jsp:body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 well">
+        <div class="container" style="margin-top: 30px; text-align: center; width: 500px;">
+            <div class="panel panel-primary">
+                 <div class="panel-heading">
+                     <h3 class="panel-title">LOG IN</h3>
+                 </div>
+                <div class="panel-body">
                     <div class="form_wrapper">
                         <form class="login" action="login" method="post">
-                            <h3>Login</h3>
-                            <div>
-                                <label>Mail:</label>
-                                <input type="text"  name="mail"/>
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <span style="color: #66afe9;" class="glyphicon glyphicon-phone" aria-hidden="true"></span> 
+                                </span>
+                                <input type="text" class="form-control" placeholder="Phone number">
                             </div>
-                            <div>
-                                <label>Password:</label>
-                                <input type="password" name="password" />
+                            <br />
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <span style="color: #66afe9;" class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> 
+                                </span>
+                                <input type="password" name="password" class="form-control" placeholder="Password">
                             </div>
+                            <br />
                             <div class="bottom">
-                                <input type="submit" value="Submit"></input>
+                                <button type="submit" class="btn btn-primary">Log in</button>
                             </div>
+                            <br />
+                            <span>
+                                <c:url value="/register" var="registerUrl" />
+                                <a href="${registerUrl}">You aren't already registered ? Please, register me now !</a>
+                            </span>
                         </form>
                     </div>
                 </div>
