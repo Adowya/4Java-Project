@@ -17,8 +17,9 @@
         <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/js/libs/twitter-bootstrap/css/bootstrap.css" />
         <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/js/libs/twitter-bootstrap/css/style.css" />
         
-        <link src="${pageContext.request.contextPath}/js/libs/jquery.min.js"/>
-        <link src="${pageContext.request.contextPath}/js/libs/custom.js"/>
+        <script src="${pageContext.request.contextPath}/js/libs/jquery.min.js" type="text/javascript"></script>
+        <script src="${pageContext.request.contextPath}/js/libs/twitter-bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        <script src="${pageContext.request.contextPath}/js/libs/custom.js" type="text/javascript"></script>
         
         
     </head>
