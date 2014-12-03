@@ -19,7 +19,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="form_wrapper">
-                        <form class="login" action="login" method="post">
+                        <form class="register" action="register" method="post">
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
                                     <span style="color: #66afe9;" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 
@@ -70,7 +70,7 @@
                             </div>
                             <br />
                             <div class="bottom">
-                                <button type="submit" class="btn btn-primary">Register me</button>
+                                <button type="submit" vlaue="Submit" class="btn btn-primary">Register me</button>
                             </div>
                             <br />
                             <span>
