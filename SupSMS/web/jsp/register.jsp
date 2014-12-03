@@ -24,49 +24,49 @@
                                 <span class="input-group-addon">
                                     <span style="color: #66afe9;" class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> 
                                 </span>
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="email" name="email" class="form-control" placeholder="Email">
                             </div>
                             <br />
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
                                     <span style="color: #66afe9;" class="glyphicon glyphicon-user" aria-hidden="true"></span> 
                                 </span>
-                                <input type="text" class="form-control" placeholder="Firstname">
+                                <input type="text" name="first_name" class="form-control" placeholder="Firstname">
                             </div>
                             <br />
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
                                     <span style="color: #66afe9;" class="glyphicon glyphicon-user" aria-hidden="true"></span> 
                                 </span>
-                                <input type="text" class="form-control" placeholder="Lastname">
+                                <input type="text" name="last_name" class="form-control" placeholder="Lastname">
                             </div>
                             <br />
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
                                     <span style="color: #66afe9;" class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> 
                                 </span>
-                                <input type="text" class="form-control" placeholder="Zip">
+                                <input type="text" name="zip" class="form-control" placeholder="Zip">
                             </div>
                             <br />
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
                                     <span style="color: #66afe9;" class="glyphicon glyphicon-phone" aria-hidden="true"></span> 
                                 </span>
-                                <input type="text" class="form-control" placeholder="Phone number">
+                                <input type="text" name="phone" class="form-control" placeholder="Phone number">
                             </div>
                             <br />
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
                                     <span style="color: #66afe9;" class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> 
                                 </span>
-                                <input type="password" name="password" class="form-control" placeholder="Password">
+                                <input type="password" name="password" name="password" class="form-control" placeholder="Password">
                             </div>
                             <br />
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
                                     <span style="color: #66afe9;" class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> 
                                 </span>
-                                <input type="text" class="form-control" placeholder="Credit card">
+                                <input type="text" name="card" class="form-control" placeholder="Credit card">
                             </div>
                             <br />
                             <div class="bottom">

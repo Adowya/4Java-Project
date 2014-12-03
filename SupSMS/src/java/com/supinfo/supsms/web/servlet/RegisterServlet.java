@@ -49,6 +49,9 @@ public class RegisterServlet extends HttpServlet {
         users.setZip(zip);
         
         Date created = new Date();
+        
+        System.out.println(users);
+        
         users.setCreated(created);
         usersService.addUsers(users);
         resp.sendRedirect(req.getContextPath() + "/");
