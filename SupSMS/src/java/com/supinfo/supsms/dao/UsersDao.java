@@ -5,7 +5,6 @@
 */
 package com.supinfo.supsms.dao;
 
-import com.supinfo.supsms.entity.Invoice;
 import com.supinfo.supsms.entity.Users;
 import java.util.List;
 
@@ -13,16 +12,16 @@ import java.util.List;
  *
  * @author Clement
  */
-public interface InvoiceDao {
+public interface UsersDao {
     
-    Invoice addInvoice(Invoice Invoice);
+    Users addUsers(Users Users);
     
-    List<Invoice> getAllInvoice();
+    List<Users> getAllUsers();
     
-    public Invoice findInvoiceById(Long InvoiceId);
+    public Users findUsersById(Long UsersId);
     
-    public void removeInvoice(Invoice findInvoiceById);
+    public void removeUsers(Users findUsersById);
     
-    public Invoice findInvoiceByUserId(Users userId);
+    public List<Users> findUsersByFilter(Long UsersPhoneLong);
     
 }

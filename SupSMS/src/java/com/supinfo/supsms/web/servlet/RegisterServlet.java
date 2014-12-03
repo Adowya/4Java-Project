@@ -5,8 +5,11 @@
 */
 package com.supinfo.supsms.web.servlet;
 
+import com.supinfo.supsms.entity.Users;
 import com.supinfo.supsms.service.CustomerService;
+import com.supinfo.supsms.service.UsersService;
 import java.io.IOException;
+import java.util.Date;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 public class RegisterServlet extends HttpServlet {
     
     @EJB
-    private CustomerService customerService;
+    private UsersService usersService;
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,10 +34,25 @@ public class RegisterServlet extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        Customer customer = new Customer();
-//        customer.setEmail(req.getParameter("email"));
-//        customerService.addCustomer(customer);
-//        resp.sendRedirect(req.getContextPath() + "/");
+        
+        Users users = new Users();
+        users.setEmail(req.getParameter("email"));
+        users.setFirst_name(req.getParameter("first_name"));
+        users.setLast_name(req.getParameter("last_name"));
+        users.setPassword(req.getParameter("password"));
+        
+        Long phone = Long.parseLong(req.getParameter("phone"));
+        users.setPhone(phone);
+        Long card = Long.parseLong(req.getParameter("card"));
+        users.setCard(card);
+        Long zip = Long.parseLong(req.getParameter("zip"));
+        users.setZip(zip);
+        
+        Date created = new Date();
+        users.setCreated(created);
+        usersService.addUsers(users);
+        resp.sendRedirect(req.getContextPath() + "/");
+        
     }
     
     

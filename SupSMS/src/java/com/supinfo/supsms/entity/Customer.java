@@ -36,8 +36,8 @@ public abstract class Customer implements Serializable {
     
     private String first_name;
     private String last_name;
-    private String password;
     private String email;
+    private Long zip;
     
     @NotNull
     @Column(nullable=false)
@@ -95,20 +95,6 @@ public abstract class Customer implements Serializable {
     }
     
     /**
-     * @return the password
-     */
-    public String getPassword() {
-        return password;
-    }
-    
-    /**
-     * @param password the password to set
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    
-    /**
      * @return the email
      */
     public String getEmail() {
@@ -149,6 +135,22 @@ public abstract class Customer implements Serializable {
     public void setCreated(Date created) {
         this.created = created;
     }
+
+    /**
+     * @return the zip
+     */
+    public Long getZip() {
+        return zip;
+    }
+
+    /**
+     * @param zip the zip to set
+     */
+    public void setZip(Long zip) {
+        this.zip = zip;
+    }
+    
+    
     
     
     

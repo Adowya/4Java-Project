@@ -14,17 +14,17 @@
     <jsp:body>
         <div class="container" style="margin-top: 30px; text-align: center; width: 500px;">
             <div class="panel panel-primary">
-                 <div class="panel-heading">
-                     <h3 class="panel-title">REGISTER ME</h3>
-                 </div>
+                <div class="panel-heading">
+                    <h3 class="panel-title">REGISTER ME</h3>
+                </div>
                 <div class="panel-body">
                     <div class="form_wrapper">
                         <form class="login" action="login" method="post">
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
-                                    <span style="color: #66afe9;" class="glyphicon glyphicon-phone" aria-hidden="true"></span> 
+                                    <span style="color: #66afe9;" class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> 
                                 </span>
-                                <input type="text" class="form-control" placeholder="Phone number">
+                                <input type="email" class="form-control" placeholder="Email">
                             </div>
                             <br />
                             <div class="input-group input-group-lg">
@@ -45,7 +45,14 @@
                                 <span class="input-group-addon">
                                     <span style="color: #66afe9;" class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> 
                                 </span>
-                                <input type="text" class="form-control" placeholder="Credit card">
+                                <input type="text" class="form-control" placeholder="Zip">
+                            </div>
+                            <br />
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <span style="color: #66afe9;" class="glyphicon glyphicon-phone" aria-hidden="true"></span> 
+                                </span>
+                                <input type="text" class="form-control" placeholder="Phone number">
                             </div>
                             <br />
                             <div class="input-group input-group-lg">
@@ -53,6 +60,13 @@
                                     <span style="color: #66afe9;" class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> 
                                 </span>
                                 <input type="password" name="password" class="form-control" placeholder="Password">
+                            </div>
+                            <br />
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <span style="color: #66afe9;" class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> 
+                                </span>
+                                <input type="text" class="form-control" placeholder="Credit card">
                             </div>
                             <br />
                             <div class="bottom">
