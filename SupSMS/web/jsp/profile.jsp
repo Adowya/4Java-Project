@@ -15,7 +15,7 @@
     <jsp:body>
         <div class="container">
             <div class="row">
-                <div class="col-md-12 well">
+                <div class="col-md-12">
                     
                 </div>
             </div>

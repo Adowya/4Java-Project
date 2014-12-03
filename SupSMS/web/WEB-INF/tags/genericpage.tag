@@ -96,15 +96,7 @@
         
         <div class="clearfix"></div>
         <div class="content full-height">
-            <div class="container full-height">
-                <div class="row full-height">
-                    <div class="col-lg-12 full-height">
-                        <div id="body">
-                            <jsp:doBody/>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <jsp:doBody/>
         </div>
         
     </body>

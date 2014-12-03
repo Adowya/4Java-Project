@@ -3,38 +3,55 @@ html, body {
 }
 
 /* we push the content down some and clean up the edges on mobile devices */
+@media (max-width: 1200px) {
+  .index-stats{
+    zoom: 70%;
+  }
+}
+
+@media (max-width: 968px) {
+  .index-stats{
+    zoom: 50%;
+  }
+}
+
 @media (max-width: 767px) {
-    .content {
-      padding: 15px;
-      margin-top: 100px;
-    }
+  .content {
+    padding: 15px;
+    margin-top: 100px;
+  }
+
+  .index-stats{
+    zoom: 40%;
+  }
 }
 
 /* When we were on larger screen sizes we can show our vertical menu bar */
 @media (min-width: 768px) {
-    /* clean up some of the default Bootstrap styles for panels in the menu */
-    #menu-bar .panel {
-      margin-bottom: 0;
-      border: none;
-      border-radius: 0;
-      -webkit-box-shadow: none;
-      -box-shadow: none;
-    }
+  /* clean up some of the default Bootstrap styles for panels in the menu */
+  #menu-bar .panel {
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -box-shadow: none;
+  }
 
-    #navbar {
-      float: left;
-      width: 300px; /* You can adjust the width to your liking, just remember to also adjust the content margin below accordingly */
-      height: 100%;
-    }
+  #navbar {
+    float: left;
+    width: 300px; /* You can adjust the width to your liking, just remember to also adjust the content margin below accordingly */
+    height: 100%;
+  }
 
-    .content {
-      margin-left: 300px; /* If you adjusted the width above you will need to adjust this as well */
-      min-height: 100%;
-    }
+  .content {
+    margin-left: 300px; /* If you adjusted the width above you will need to adjust this as well */
+    min-height: 100%;
+  }
 
-    .container {
-      margin-left: 25px; /* We will add a little cushion to our content between the menu bar */
-    }
+  .container {
+    margin-left: 25px; /* We will add a little cushion to our content between the menu bar */
+  }
+
 }
 
 .conv {
@@ -46,22 +63,52 @@ html, body {
 }
 
 .navbar-brand {
-    float: none;
+  float: none;
 }
 
 .titleSMS {
-    color: white;
+  color: white;
 }
 
 .panel-title {
-    font-size: 34px;
+  font-size: 34px;
 }
 
 h2 {
-    color: #3278b3;
+  color: #3278b3;
 }
 
 p {
-    color: #66afe9;
-    font-size: 20px;
+  color: #66afe9;
+  font-size: 20px;
+}
+
+.container{
+  margin-top: 60px;
+}
+
+.index-stats{
+  font-size: 80px;
+  margin-top: 60px;
+}
+
+.index-stats span{
+  vertical-align: text-top;
+}
+
+.index-stats span.glyphicon{
+  font-size: 100px;
+  color: #66afe9;
+}
+
+p.index-footer{
+  float: right;
+  color: #eb9316;
+  font-size: 28px;
+  margin-top: 60px;
+}
+
+p.index-footer span.quote{
+  font-size: 40px;
+  font-family: "Times New Roman", Georgia, Serif;
 }

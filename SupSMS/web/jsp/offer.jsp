@@ -13,12 +13,14 @@
         <title>Offer</title>
     </jsp:attribute>
     <jsp:body>
-        <div class="container" style="margin-top: 30px; text-align: center; width: 500px;">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">OUR OFFER</h3>
-                </div>
-                <div class="panel-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 col-xs-12 col-sm-offset-1 col-sm-10 full-height">
+                <div class="panel panel-primary">
+                 <div class="panel-heading">
+                     <h3 class="panel-title">OUR OFFER</h3>
+                 </div>
+                 <div class="panel-body">
                     <span style="color: #66afe9; " class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
                     <span>SMS UNLIMITED</span>
                     <hr />
@@ -35,5 +37,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </jsp:body>
 </t:genericpage>
