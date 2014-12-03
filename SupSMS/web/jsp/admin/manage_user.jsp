@@ -1,8 +1,9 @@
 <%-- 
-    Document   : profile
-    Created on : 3 déc. 2014, 00:27:14
+    Document   : manage_user
+    Created on : 3 déc. 2014, 23:28:15
     Author     : Clement
 --%>
+    
     
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
@@ -10,7 +11,7 @@
     
 <t:genericpage>
     <jsp:attribute name="header">
-        <title>Profile</title>
+        <title>Manage user</title>
     </jsp:attribute>
     <jsp:body>
         <div class="container">

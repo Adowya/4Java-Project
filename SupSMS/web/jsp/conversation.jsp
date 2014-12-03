@@ -3,13 +3,14 @@
     Created on : 3 déc. 2014, 00:26:56
     Author     : Clement
 --%>
-
+    
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
 <t:genericpage>
     <jsp:attribute name="header">
+        <title>Conversation</title>
     </jsp:attribute>
     <jsp:body>
         <div class="container">

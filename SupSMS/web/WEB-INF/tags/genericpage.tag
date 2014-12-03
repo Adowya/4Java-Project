@@ -43,10 +43,28 @@
                         <c:url value="/offer" var="offerUrl" />
                         <li><a href="${offerUrl}">Offer page</a></li>
                         
+                        <c:choose>
+                            <c:when test="${not empty admin}">
+                                <li class="panel dropdown"> 
+                                    <a data-toggle="collapse" data-parent="#menu-bar" href="#collapseTwo">
+                                        Admin Panel         
+                                    </a>
+                                    <ul id="collapseTwo" class="panel-collapse collapse">
+                                        <c:url value="/manage_user" var="manageUsersUrl" />
+                                        <li><a href="${manageUsersUrl}">Show and manage all users</a></li>
+                                        
+                                        <c:url value="/manage_invoice" var="manageInvoicesUrl" />
+                                        <li><a href="${manageInvoicesUrl}">Show all invoices</a></li>
+                                    </ul>
+                                </li>
+                            </c:when>
+                            <c:otherwise>
+                                
+                            </c:otherwise>
+                        </c:choose>    
                         
                         <c:choose>
                             <c:when test="${not empty user}">
-                                
                                 <c:url value="/conversation" var="conversationUrl" />
                                 <li><a href="${conversationUrl}">Conversation page</a></li>
                                 
@@ -54,37 +72,22 @@
                                 <li><a href="${profileUrl}">Profile</a></li>
                                 
                                 <c:url value="/invoice" var="invoiceUrl" />
-                                <li><a href="${invoiceUrl}">Profile</a></li>
+                                <li><a href="${invoiceUrl}">Invoice</a></li>
                                 
                                 
                                 <c:url value="/logout" var="logoutUrl" />
                                 <li><a href="${logoutUrl}">Logout</a></li>
-                                
-                            </c:when>
+                                </c:when>
                             
-                            <c:when test="${not empty admin}">
-                                <li class="panel dropdown"> <!-- We add the panel class to workaround collapsing menu items in Bootstrap -->
-                                    <a data-toggle="collapse" data-parent="#menu-bar" href="#collapseTwo">
-                                        Admin Panel         
-                                    </a>
-                                    <ul id="collapseTwo" class="panel-collapse collapse"> <!-- Notice the ID of this element must match the href attribute in the <a> element above it. Also we have added the panel-collapse class -->
-                                        <c:url value="/managee-users" var="manageeUsersUrl" />
-                                        <li><a href="${manageeUsersUrl}">Show and manage all users</a></li>
-                                        
-                                        <c:url value="/managee-users" var="manageeUsersUrl" />
-                                        <li><a href="${manageeUsersUrl}">Show all invoices</a></li>
-                                    </ul>
-                                </li>
-                            </c:when>
                             <c:otherwise>
                                 <c:url value="/login" var="loginUrl" />
                                 <li><a href="${loginUrl}">Log in</a></li>
                                 
                                 <c:url value="/register" var="registerUrl" />
                                 <li><a href="${registerUrl}">Register</a></li>
-                                
-                            </c:otherwise>
-                        </c:choose>             
+                                </c:otherwise>
+                            </c:choose>    
+                        
                     </ul>
                 </div>
                 

@@ -8,16 +8,17 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+    
 <t:genericpage>
     <jsp:attribute name="header">
+        <title>Login</title>
     </jsp:attribute>
     <jsp:body>
         <div class="container" style="margin-top: 30px; text-align: center; width: 500px;">
             <div class="panel panel-primary">
-                 <div class="panel-heading">
-                     <h3 class="panel-title">LOG IN</h3>
-                 </div>
+                <div class="panel-heading">
+                    <h3 class="panel-title">LOG IN</h3>
+                </div>
                 <div class="panel-body">
                     <div class="form_wrapper">
                         <form class="login" action="login" method="post">

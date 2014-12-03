@@ -10,6 +10,7 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
+        <title>Register</title>
     </jsp:attribute>
     <jsp:body>
         <div class="container" style="margin-top: 30px; text-align: center; width: 500px;">
@@ -70,7 +71,7 @@
                             </div>
                             <br />
                             <div class="bottom">
-                                <button type="submit" vlaue="Submit" class="btn btn-primary">Register me</button>
+                                <button type="submit" value="Submit" class="btn btn-primary">Register me</button>
                             </div>
                             <br />
                             <span>
