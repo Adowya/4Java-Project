@@ -34,7 +34,7 @@
                 </button>
                 <c:url value="/" var="homeUrl" />
                 <a class="navbar-brand" href="${homeUrl}">
-                    <h1 class="site-title">SupSMS</h1></a>
+                    <h1 class="site-title titleSMS">SupSMS</h1></a>
                 
                 <div class="clearfix"></div>
                 <div class="collapse navbar-collapse">
