@@ -34,7 +34,6 @@ public class RegisterServlet extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
         Users users = new Users();
         users.setEmail(req.getParameter("email"));
         users.setFirst_name(req.getParameter("first_name"));
@@ -49,12 +48,16 @@ public class RegisterServlet extends HttpServlet {
         users.setZip(zip);
         
         Date created = new Date();
-        
-        System.out.println(users);
-        
         users.setCreated(created);
+        
+        //For Admin
+        //         users.setRole_member(2;
+        //For User
+        users.setRole_member(1);
+        
+        
         usersService.addUsers(users);
-        resp.sendRedirect(req.getContextPath() + "/");
+        resp.sendRedirect(req.getContextPath() + "/login");
         
     }
     

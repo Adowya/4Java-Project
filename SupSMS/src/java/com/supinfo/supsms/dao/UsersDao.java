@@ -22,6 +22,6 @@ public interface UsersDao {
     
     public void removeUsers(Users findUsersById);
     
-    public List<Users> findUsersByFilter(Long UsersPhoneLong);
+    public List<Users> findUsersByFilter(Long phone, String password);
     
 }
