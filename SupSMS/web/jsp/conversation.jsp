@@ -82,33 +82,36 @@
                         <div class="newmsg-form">
                             <form id="formMsg" action="" method="POST">
                                 <input type="text" name="message" placeholder="Message">
-                                <button type="button" onclick="sendMessage();" class="btn btn-link">Send</button>
+                                <button type="submit" class="btn btn-link">Send</button>
                             </form>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 conv full-height">
                     <h1>Contact List</h1>
-                    <ol class="widget-list" id="developers">
+                    <ul class="widget-list" id="developers">
+                        <li>
+                            <a class="widget-list-link active">
+                                <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
+                                Joe Doe #1 <span>489218E3</span>
+                            </a>
+                            <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
+                        </li>
                         <li>
                             <a class="widget-list-link">
                                 <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
                                 Joe Doe #1 <span>489218E3</span>
                             </a>
+                            <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
                         </li>
                         <li>
                             <a class="widget-list-link">
                                 <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
-                                Jacky Chann #2 <span>9082173</span>
+                                Joe Doe #1 <span>489218E3</span>
                             </a>
-                        </li>
-                        <li>
-                            <a class="widget-list-link">
-                                <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
-                                Developer #3 <span>837E7</span>
-                            </a>
-                        </li>
-                    </ol>
+                            <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
+                        </li>                       
+                    </ul>
                     <table>
                         <thead>
                         <th>Nickname</th>
@@ -128,13 +131,15 @@
         </div>
         <script type="text/javascript">
             $(".conversation-msg").animate({ scrollTop: $(document).height() }, 0);
-            
-            var sendMessage = function(){
+            $("#formMsg").submit(function(e){
+                if($("#progress-msg").css('width') != $("#progress-msg").parent().css('width')){
+                    e.preventDefault();
+                }
                 $("#progress-msg").css({ width: '100%' });
                 setTimeout(function(){
-                    $("#formMsg").submit();
-                },1000)
-            };
+                     $("#formMsg").submit();
+                },1000);
+            });
             
         </script>
     </jsp:body>
