@@ -26,27 +26,35 @@
                             <tbody>
                                 <tr>
                                     <td>id</td>
-                                    <td>${requestScope.supUser.id}</td>
+                                    <td>${requestScope.user.id}</td>
                                 </tr>
                                 <tr>
                                     <td>First Name</td>
-                                    <td><input type="text"
-                                               value="${requestScope.supUser.first_name}" name="user_first_name" /></td>
+                                    <td><input type="text" value="${requestScope.user.first_name}" name="user_first_name" /></td>
                                 </tr>
                                 <tr>
                                     <td>Last Name</td>
-                                    <td><input type="text"
-                                               value="${requestScope.supUser.last_name}" name="user_last_name" /></td>
+                                    <td><input type="text" value="${requestScope.user.last_name}" name="user_last_name" /></td>
                                 </tr>
                                 <tr>
                                     <td>Mail</td>
-                                    <td><input type="text" value="${requestScope.supUser.mail}"
-                                               name="user_mail" /></td>
+                                    <td><input type="text" value="${requestScope.user.email}" name="user_email" /></td>
                                 </tr>
                                 <tr>
                                     <td>Password</td>
-                                    <td><input type="text"
-                                               value="${requestScope.supUser.password}" name="user_password" /></td>
+                                    <td><input type="password" value="${requestScope.user.password}" name="user_password" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Phone</td>
+                                    <td><input type="text" value="${requestScope.user.phone}" name="user_phone" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Zip</td>
+                                    <td><input type="text" value="${requestScope.user.zip}" name="user_zip" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Card</td>
+                                    <td><input type="text" value="${requestScope.user.card}" name="user_card" /></td>
                                 </tr>
                                 <tr>
                                 </tr>

@@ -60,23 +60,10 @@ public class LoginServlet extends HttpServlet {
                 }
                 
                 List<Users> usersList = usersService.findUsersByFilter(phone, passwordParam);
-                usersList.stream().map((user) -> {
-                    System.out.println(user.getLast_name());
-                    return user;
-                }).map((user) -> {
-                    System.out.println(user.getFirst_name());
-                    return user;
-                }).map((user) -> {
-                    System.out.println(user.getEmail());
-                    return user;
-                }).forEach((user) -> {
-                    System.out.println(user.getRole_member());
-                });
-                
                 if(usersList.size() > 0){
-                    Users Users = (Users) usersList.get(0);
-                    req.getSession().setAttribute("user", usersList);
-                    if(Users.getRole_member() == 2){
+                    Users users = (Users) usersList.get(0);
+                    req.getSession().setAttribute("user", users);
+                    if(users.getRole_member() == 2){
                         System.out.println("admin");
                         req.getSession().setAttribute("admin", "adminSession");
                     }

@@ -1,11 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
 package com.supinfo.supsms.web.servlet;
 
+import com.supinfo.supsms.entity.Users;
+import com.supinfo.supsms.service.UsersService;
 import java.io.IOException;
+import java.util.List;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,11 +23,53 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "ProfileServlet", urlPatterns = {"/profile"})
 public class ProfileServlet extends HttpServlet {
     
+    @EJB
+    private UsersService usersService;
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
+        Users user = (Users) req.getSession().getAttribute("user");
+        usersService.findUsersById(user.getId());
+        System.out.println(user.getLast_name());
+        req.setAttribute("user", user);
+        
         req.getRequestDispatcher("/jsp/profile.jsp").forward(req, resp);
     }
-
+    
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
+        Users users = new Users();
+        
+        String user_id = req.getParameter("user_id");
+        Long user_id_long = Long.valueOf(user_id);
+        users.setId(user_id_long);
+        
+        users.setFirst_name(req.getParameter("user_first_name"));
+        users.setLast_name(req.getParameter("user_first_name"));
+        users.setEmail(null);
+        users.setPassword(null);
+        
+        String user_phone = req.getParameter("user_phone");
+        Long user_phone_long = Long.valueOf(user_phone);
+        users.setPhone(user_phone_long);
+        
+        String user_zip = req.getParameter("user_zip");
+        Long user_zip_long = Long.valueOf(user_zip);
+        users.setZip(user_zip_long);
+        
+        String user_card = req.getParameter("user_first_name");
+        Long user_card_long = Long.valueOf(user_card);
+        users.setCard(user_card_long);
+        
+        
+//        usersService.updateUsers(users);
+        
+        
+        resp.sendRedirect(req.getContextPath() + "/train-stations");
+    }
+    
     
     
 }
