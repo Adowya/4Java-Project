@@ -60,6 +60,7 @@ input:focus, button:focus {
 .bkg-index{
     background-image: url("./index-bkg.jpg");
     background-size: cover;
+    background-attachment: fixed;
     margin: 0;
 }
 
