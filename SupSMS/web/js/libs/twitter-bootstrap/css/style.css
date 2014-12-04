@@ -15,18 +15,17 @@ input:focus, button:focus {
 
 @media (max-width: 968px) {
   .index-stats{
-    zoom: 50%;
+    zoom: 60%;
   }
 }
 
 @media (max-width: 767px) {
   .content {
-    padding: 15px;
     margin-top: 100px;
   }
 
   .index-stats{
-    zoom: 40%;
+    zoom: 50%;
   }
 }
 
@@ -56,6 +55,12 @@ input:focus, button:focus {
     margin-left: 25px; /* We will add a little cushion to our content between the menu bar */
   }
 
+}
+
+.bkg-index{
+    background-image: url("./index-bkg.jpg");
+    background-size: cover;
+    margin: 0;
 }
 
 .conv {
@@ -92,23 +97,29 @@ p {
   height: 100%;
 }
 
+.stat-bubble{
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    padding: 50px 0px;
+    text-align: center;
+    margin: 0 auto;
+}
+
 .index-stats{
-  font-size: 80px;
+  font-size: 30px;
   margin-top: 60px;
 }
 
-.index-stats span{
-  vertical-align: text-top;
-}
-
-.index-stats span.glyphicon{
-  font-size: 100px;
+.index-stats div.glyphicon{
+  font-size: 80px;
   color: #66afe9;
 }
 
 p.index-footer{
   float: right;
-  color: #eb9316;
+  color: #FFFFFF;
   font-size: 28px;
   margin-top: 60px;
 }
@@ -310,7 +321,8 @@ li:last-child > .widget-list-link {
 }
 
 .conversation .conversation-msg{
-    height: 100%;
+    height: 95%;
+    overflow: hidden;
     overflow-y: scroll;
 }
 

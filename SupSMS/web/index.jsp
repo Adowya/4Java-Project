@@ -29,7 +29,7 @@
             </c:when>
             <c:otherwise>
                 
-                <div class="container">
+                <div class="container bkg-index">
                     <div class="row">
                         <div class="col-md-12 full-height">
                             <h2>WELCOME TO SUPSMS APPLICATION !</h2>
@@ -43,26 +43,28 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 full-height index-stats">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                            <span>47</span>
-                            <span>Registered users</span>
+                        <div class="col-md-6 full-height index-stats">
+                            <div class="stat-bubble">
+                                <div class="glyphicon glyphicon-user" aria-hidden="true"></div>
+                                <div>47</div>
+                                <div>Registered users</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 full-height index-stats">
-                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                            <span>689</span>
-                            <span>SMS sent</span>
+                        <div class="col-md-6 full-height index-stats">
+                            <div class="stat-bubble">
+                                <div class="glyphicon glyphicon-envelope" aria-hidden="true"></div>
+                                <div>689</div>
+                                <div>SMS sent</div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 full-height">
                             <p class="index-footer">
                                 <span class="quote">"</span>
-                                <span style="color: #eb9316; font-size: 28px">SupSMS is Amazing !!</span>
+                                <span style="font-size: 28px">SupSMS is Amazing !!</span>
                                 <span class="quote">"</span>
-                                <span style="color: black; font-size: 14px; font-style: italic;">ITPRO Mag</span>
+                                <span style="font-size: 14px; font-style: italic;">ITPRO Mag</span>
                             </p>
                         </div>
                     </div>
