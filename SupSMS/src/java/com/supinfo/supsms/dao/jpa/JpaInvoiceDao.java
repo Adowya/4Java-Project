@@ -48,25 +48,30 @@ public class JpaInvoiceDao implements InvoiceDao{
     }
     
     @Override
+    public Invoice updateInvoice(Invoice Invoice) {
+        return em.merge(Invoice);
+    }
+    
+    @Override
     public void removeInvoice(Invoice Invoice) {
         em.remove(Invoice);
     }
     
     @Override
-    public Invoice findInvoiceByUserId(Users userId) {
-        return null;
-//        CriteriaBuilder cb = em.getCriteriaBuilder();
-//        CriteriaQuery<Invoice> query = cb.createQuery(Invoice.class);
-//        Root<Invoice> invoice = query.from(Invoice.class);
-//        
-//        List<Predicate> predicates = new ArrayList<>();
-//        if(userId != null) {
-//            predicates.add(
-//                    cb.equal(invoice.get("user"), userId)
-//            );
-//        }
-//        query.where(predicates.toArray(new Predicate[predicates.size()]));
-//        
-//        return em.createQuery(query).getResultList();
-    }    
+    public List<Invoice> findInvoiceByUserId(Users user) {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Invoice> query = cb.createQuery(Invoice.class);
+        Root<Invoice> invoice = query.from(Invoice.class);
+        
+        List<Predicate> predicates = new ArrayList<>();
+        if(user != null) {
+            predicates.add(
+                    cb.equal(invoice.get("_users"), user)
+            );
+        }
+        query.where(predicates.toArray(new Predicate[predicates.size()]));
+        
+        return em.createQuery(query).getResultList();
+    }
+    
 }

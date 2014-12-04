@@ -21,8 +21,10 @@ public interface InvoiceDao {
     
     public Invoice findInvoiceById(Long InvoiceId);
     
+    Invoice updateInvoice(Invoice Invoice);
+    
     public void removeInvoice(Invoice findInvoiceById);
     
-    public Invoice findInvoiceByUserId(Users userId);
+    public List<Invoice> findInvoiceByUserId(Users userId);
     
 }

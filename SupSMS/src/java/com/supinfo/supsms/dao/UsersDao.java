@@ -20,6 +20,8 @@ public interface UsersDao {
     
     public Users findUsersById(Long UsersId);
     
+    Users updateUsers(Users Users);
+    
     public void removeUsers(Users findUsersById);
     
     public List<Users> findUsersByFilter(Long phone, String password);

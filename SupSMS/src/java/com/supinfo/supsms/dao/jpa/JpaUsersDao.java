@@ -46,6 +46,11 @@ public class JpaUsersDao implements UsersDao {
     }
     
     @Override
+    public Users updateUsers (Users user) {
+        return em.merge(user);
+    }
+    
+    @Override
     public void removeUsers(Users Users) {
         em.remove(Users);
     }
@@ -72,6 +77,7 @@ public class JpaUsersDao implements UsersDao {
         query.where(predicates.toArray(new Predicate[predicates.size()]));
         return em.createQuery(query).getResultList();
     }
+    
     
     
 }

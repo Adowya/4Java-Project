@@ -16,9 +16,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <form action="account" method="post">
+                    <form action="profile" method="post">
                         <table class="profile_tab">
-                            <h1>User account</h1>
+                            <h1>User profile</h1>
                             <thead>
                             <th>Information</th>
                             <th>Value</th>

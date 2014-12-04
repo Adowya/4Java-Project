@@ -28,28 +28,21 @@ public class ProfileServlet extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
         Users user = (Users) req.getSession().getAttribute("user");
         usersService.findUsersById(user.getId());
-        System.out.println(user.getLast_name());
         req.setAttribute("user", user);
-        
         req.getRequestDispatcher("/jsp/profile.jsp").forward(req, resp);
     }
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
-        Users users = new Users();
-        
-        String user_id = req.getParameter("user_id");
-        Long user_id_long = Long.valueOf(user_id);
-        users.setId(user_id_long);
+        Users users = (Users) req.getSession().getAttribute("user");
         
         users.setFirst_name(req.getParameter("user_first_name"));
-        users.setLast_name(req.getParameter("user_first_name"));
-        users.setEmail(null);
-        users.setPassword(null);
+        users.setLast_name(req.getParameter("user_last_name"));
+        users.setEmail(req.getParameter("user_email"));
+        users.setPassword(req.getParameter("user_password"));
         
         String user_phone = req.getParameter("user_phone");
         Long user_phone_long = Long.valueOf(user_phone);
@@ -59,15 +52,13 @@ public class ProfileServlet extends HttpServlet {
         Long user_zip_long = Long.valueOf(user_zip);
         users.setZip(user_zip_long);
         
-        String user_card = req.getParameter("user_first_name");
+        String user_card = req.getParameter("user_card");
         Long user_card_long = Long.valueOf(user_card);
         users.setCard(user_card_long);
         
+        usersService.updateUsers(users);
         
-//        usersService.updateUsers(users);
-        
-        
-        resp.sendRedirect(req.getContextPath() + "/train-stations");
+        resp.sendRedirect(req.getContextPath() + "/profile");
     }
     
     

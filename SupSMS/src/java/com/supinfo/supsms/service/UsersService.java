@@ -29,6 +29,10 @@ public class UsersService {
         return usersDao.getAllUsers();
     }
     
+    public Users updateUsers(Users users) {
+        return usersDao.updateUsers(users);
+    }
+    
     public void removeUsers(Long usersId) {
         usersDao.removeUsers(findUsersById(usersId));
     }

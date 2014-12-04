@@ -31,6 +31,10 @@ public class InvoiceService {
         return invoiceDao.getAllInvoice();
     }
     
+    public Invoice updateInvoice(Invoice invoice) {
+        return invoiceDao.updateInvoice(invoice);
+    }
+    
     public void removeInvoice(Long invoiceId) {
         invoiceDao.removeInvoice(findInvoiceById(invoiceId));
     }
@@ -39,7 +43,7 @@ public class InvoiceService {
         return invoiceDao.findInvoiceById(invoiceId);
     }
     
-    public Invoice findInvoiceByUserId(Users users) {
+    public List<Invoice> findInvoiceByUserId(Users users) {
         return invoiceDao.findInvoiceByUserId(users);
     }
     

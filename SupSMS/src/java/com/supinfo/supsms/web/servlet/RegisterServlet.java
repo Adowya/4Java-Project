@@ -5,8 +5,10 @@
 */
 package com.supinfo.supsms.web.servlet;
 
+import com.supinfo.supsms.entity.Invoice;
 import com.supinfo.supsms.entity.Users;
 import com.supinfo.supsms.service.CustomerService;
+import com.supinfo.supsms.service.InvoiceService;
 import com.supinfo.supsms.service.UsersService;
 import java.io.IOException;
 import java.util.Date;
@@ -27,6 +29,9 @@ public class RegisterServlet extends HttpServlet {
     @EJB
     private UsersService usersService;
     
+     @EJB
+    private InvoiceService invoiceService;
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/jsp/register.jsp").forward(req, resp);
@@ -34,6 +39,7 @@ public class RegisterServlet extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
         Users users = new Users();
         users.setEmail(req.getParameter("email"));
         users.setFirst_name(req.getParameter("first_name"));
@@ -57,6 +63,15 @@ public class RegisterServlet extends HttpServlet {
         
         
         usersService.addUsers(users);
+        
+        // First Invoice
+        Invoice invoice = new Invoice();
+        long price = 10;
+        invoice.setPrice(price);
+        invoice.setUsers(users);
+        invoice.setCreated(created);
+        invoiceService.addInvoice(invoice);
+        
         resp.sendRedirect(req.getContextPath() + "/login");
         
     }
