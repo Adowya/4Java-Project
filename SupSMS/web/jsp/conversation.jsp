@@ -14,30 +14,72 @@
     </jsp:attribute>
     <jsp:body>
         <div class="container">
-            <div class="row">
+            <div class="row full-height">
                 <div class="col-lg-6 full-height">
-                    <h1>Conversation</h1>
-                    <div class="container">
-                        <div class="bubble">
-                            Blue text bubble
+                    <div class="conversation">
+                        <h1>Conversation<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></h1>
+                        <div class="conversation-msg">
+                            <div class="bubble">
+                                Blue text bubble
+                            </div>
+                            <div class="bubble">
+                                A bubble containing lots and lots and lots and lots of content on multiple lines
+                            </div>
+                            <div class="bubble">
+                                Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
+                            </div>
+                            <div class="bubble">
+                                Blue text bubble
+                            </div>
+                            <div class="bubble">
+                                A bubble containing lots and lots and lots and lots of content on multiple lines
+                            </div>
+                            <div class="bubble">
+                                Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
+                            </div>
+                            <div class="bubble">
+                                Blue text bubble
+                            </div>
+                            <div class="bubble">
+                                A bubble containing lots and lots and lots and lots of content on multiple lines
+                            </div>
+                            <div class="bubble">
+                                Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
+                            </div>
+                            <div class="bubble">
+                                Blue text bubble
+                            </div>
+                            <div class="bubble">
+                                A bubble containing lots and lots and lots and lots of content on multiple lines
+                            </div>
+                            <div class="bubble">
+                                Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
+                            </div>
+                            <div class="bubble">
+                                Blue text bubble
+                            </div>
+                            <div class="bubble">
+                                A bubble containing lots and lots and lots and lots of content on multiple lines
+                            </div>
+                            <div class="bubble">
+                                Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
+                            </div>
+                            <div class="bubble">
+                                Blue text bubble
+                            </div>
+                            <div class="bubble">
+                                A bubble containing lots and lots and lots and lots of content on multiple lines
+                            </div>
+                            <div class="bubble">
+                                Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
+                            </div>
                         </div>
-                            
-                        <div class="bubble bubble--alt">
-                            Green text bubble
-                        </div>
-                            
-                        <div class="bubble">
-                            A bubble containing lots and lots and lots and lots of content on multiple lines
-                        </div>
-                            
-                        <div class="bubble bubble--alt">
-                            Bubble with image
-                        </div>
-                            
-                        <div class="bubble">
-                            Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
-                        </div>
-                            
+                    </div>
+                    <div class="newmsg-form">
+                        <form action="" method="POST">
+                            <input type="text" name="message" placeholder="Message">
+                            <button type="submit" class="btn btn-link">Send</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-6 conv full-height">
