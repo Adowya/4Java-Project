@@ -28,42 +28,67 @@ public class LoginServlet extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String errorMsg = (String) req.getSession().getAttribute("errorMsg");
+        req.getSession().removeAttribute("errorMsg");
+        req.getRequestDispatcher("/jsp/login.jsp").forward(req, resp);
+    }
+    
+    public void errorMsg(String msg, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        req.getSession().setAttribute("errorMsg", msg);
         req.getRequestDispatcher("/jsp/login.jsp").forward(req, resp);
     }
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String phoneParam = (req.getParameter("phone") != null) ? req.getParameter("phone") : "";
-        String passwordParam = (req.getParameter("password") != null) ? req.getParameter("password") : "";
         
-        Long phone = null;
-        if(!phoneParam.trim().isEmpty()) {
-            try {
-                phone = new Long(phoneParam);
-            } catch (NumberFormatException e) {
+        String phoneParam = req.getParameter("phone");
+        String passwordParam = req.getParameter("password");
+        
+        if(phoneParam != null && !phoneParam.isEmpty()){
+            if(passwordParam != null && !phoneParam.isEmpty()){
+                System.out.println(phoneParam);
+                System.out.println(passwordParam);
                 
+                Long phone = null;
+                if(!phoneParam.trim().isEmpty()) {
+                    try {
+                        phone = new Long(phoneParam);
+                        System.out.println(phone);
+                    } catch (NumberFormatException e) {
+                        
+                    }
+                }
+                
+                List<Users> usersList = usersService.findUsersByFilter(phone, passwordParam);
+                usersList.stream().map((user) -> {
+                    System.out.println(user.getLast_name());
+                    return user;
+                }).map((user) -> {
+                    System.out.println(user.getFirst_name());
+                    return user;
+                }).map((user) -> {
+                    System.out.println(user.getEmail());
+                    return user;
+                }).forEach((user) -> {
+                    System.out.println(user.getRole_member());
+                });
+                
+                if(usersList.size() > 0){
+                    Users Users = (Users) usersList.get(0);
+                    req.getSession().setAttribute("user", usersList);
+                    if(Users.getRole_member() == 2){
+                        System.out.println("admin");
+                        req.getSession().setAttribute("admin", "adminSession");
+                    }
+                    resp.sendRedirect(getServletContext().getContextPath());
+                }else {
+                    doGet(req, resp);
+                }
+            }else {
+                errorMsg("Error at login", req, resp);
             }
-        }
-        
-        List<Users> usersList = usersService.findUsersByFilter(phone, passwordParam);
-        
-        for(Users user : usersList) {
-            System.out.println(user.getLast_name());
-            System.out.println(user.getFirst_name());
-            System.out.println(user.getEmail());
-            System.out.println(user.getRole_member());
-        }
-        Users Users = (Users) usersList.get(0);
-        
-        if(usersList.size() > 0){
-            req.getSession().setAttribute("user", usersList);
-            if(Users.getRole_member() == 2){
-                System.out.println("admin");
-                req.getSession().setAttribute("admin", "adminSession");
-            }
-            resp.sendRedirect(getServletContext().getContextPath());
         }else {
-            doGet(req, resp);
+            errorMsg("Error at login", req, resp);
         }
         
     }
