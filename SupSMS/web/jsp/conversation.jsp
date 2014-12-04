@@ -13,11 +13,16 @@
         <title>Conversation</title>
     </jsp:attribute>
     <jsp:body>
-        <div class="container">
+        <div class="container no-padding-top">
             <div class="row full-height">
                 <div class="col-lg-6 full-height">
                     <div class="conversation">
                         <h1>Conversation<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></h1>
+                        <div class="progress">
+                            <div id="progress-msg" class="progress-bar" role="progressbar">
+                                <span class="sr-only"></span>
+                            </div>
+                        </div>
                         <div class="conversation-msg">
                             <div class="bubble">
                                 Blue text bubble
@@ -74,12 +79,12 @@
                                 Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
                             </div>
                         </div>
-                    </div>
-                    <div class="newmsg-form">
-                        <form action="" method="POST">
-                            <input type="text" name="message" placeholder="Message">
-                            <button type="submit" class="btn btn-link">Send</button>
-                        </form>
+                        <div class="newmsg-form">
+                            <form id="formMsg" action="" method="POST">
+                                <input type="text" name="message" placeholder="Message">
+                                <button type="button" onclick="sendMessage();" class="btn btn-link">Send</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 conv full-height">
@@ -121,5 +126,16 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+            $(".conversation-msg").animate({ scrollTop: $(document).height() }, 0);
+            
+            var sendMessage = function(){
+                $("#progress-msg").css({ width: '100%' });
+                setTimeout(function(){
+                    $("#formMsg").submit();
+                },1000)
+            };
+            
+        </script>
     </jsp:body>
 </t:genericpage>
