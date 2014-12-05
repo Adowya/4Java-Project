@@ -46,14 +46,11 @@ public class LoginServlet extends HttpServlet {
         
         if(phoneParam != null && !phoneParam.isEmpty()){
             if(passwordParam != null && !phoneParam.isEmpty()){
-                System.out.println(phoneParam);
-                System.out.println(passwordParam);
                 
                 Long phone = null;
                 if(!phoneParam.trim().isEmpty()) {
                     try {
                         phone = new Long(phoneParam);
-                        System.out.println(phone);
                     } catch (NumberFormatException e) {
                         
                     }

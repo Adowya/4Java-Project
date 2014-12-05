@@ -32,11 +32,11 @@ public class InvoiceServlet  extends HttpServlet{
         Users user = (Users) req.getSession().getAttribute("user");
         List<Invoice> invoiceList = invoiceService.findInvoiceByUserId(user);
         
-        for(Invoice invoice : invoiceList) {
-            System.out.println(invoice.getId());
-            System.out.println(invoice.getPrice());
-            System.out.println(invoice.getCreated());
-        }
+//        for(Invoice invoice : invoiceList) {
+//            System.out.println(invoice.getId());
+//            System.out.println(invoice.getPrice());
+//            System.out.println(invoice.getCreated());
+//        }
         
         req.setAttribute("invoice", invoiceList);
         req.getRequestDispatcher("/jsp/invoice.jsp").forward(req, resp);

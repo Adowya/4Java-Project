@@ -19,9 +19,85 @@
             <c:when test="${not empty user}">
                 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 full-height">
-                            <h2>WELCOME TO SUPSMS APPLICATION !</h2>
+                    <div class="row full-height">
+                        <div class="col-lg-6 full-height">
+                            <h1>Contact List</h1>
+                            <ul class="widget-list" id="developers">
+                                <li>
+                                    <a class="widget-list-link active">
+                                        <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
+                                        Joe Doe #1 <span>489218E3</span>
+                                    </a>
+                                    <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
+                                </li>
+                                <li>
+                                    <a class="widget-list-link">
+                                        <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
+                                        Joe Doe #1 <span>489218E3</span>
+                                    </a>
+                                    <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
+                                </li>
+                                <li>
+                                    <a class="widget-list-link">
+                                        <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
+                                        Joe Doe #1 <span>489218E3</span>
+                                    </a>
+                                    <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
+                                </li>                       
+                            </ul>
+                        </div>
+                        <div class="col-md-6 full-height">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Add Contact</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form_wrapper">
+                                        <form class="register" action="register" method="post">
+                                            <div class="input-group input-group-lg">
+                                                <span class="input-group-addon">
+                                                    <span style="color: #66afe9;" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 
+                                                </span>
+                                                <input type="email" name="email" class="form-control" placeholder="Email">
+                                            </div>
+                                            <br />
+                                            <div class="input-group input-group-lg">
+                                                <span class="input-group-addon">
+                                                    <span style="color: #66afe9;" class="glyphicon glyphicon-user" aria-hidden="true"></span> 
+                                                </span>
+                                                <input type="text" name="first_name" class="form-control" placeholder="Firstname">
+                                            </div>
+                                            <br />
+                                            <div class="input-group input-group-lg">
+                                                <span class="input-group-addon">
+                                                    <span style="color: #66afe9;" class="glyphicon glyphicon-user" aria-hidden="true"></span> 
+                                                </span>
+                                                <input type="text" name="last_name" class="form-control" placeholder="Lastname">
+                                            </div>
+                                            <br />
+                                            <div class="input-group input-group-lg">
+                                                <span class="input-group-addon">
+                                                    <span style="color: #66afe9;" class="glyphicon glyphicon-home" aria-hidden="true"></span> 
+                                                </span>
+                                                <input type="text" name="zip" class="form-control" placeholder="Zip">
+                                            </div>
+                                            <br />
+                                            <div class="input-group input-group-lg">
+                                                <span class="input-group-addon">
+                                                    <span style="color: #66afe9;" class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 
+                                                </span>
+                                                <input type="text" name="phone" class="form-control" placeholder="Phone number">
+                                            </div>
+                                            <br />
+                                                
+                                            <div class="bottom">
+                                                <button type="submit" value="Submit" class="btn btn-primary">Create contact</button>
+                                            </div>
+                                            <br />
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -72,7 +148,7 @@
                     
             </c:otherwise>
         </c:choose>
-        
+            
     </jsp:body>
 </t:genericpage>
     

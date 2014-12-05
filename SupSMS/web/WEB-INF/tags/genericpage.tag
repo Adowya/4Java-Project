@@ -41,26 +41,6 @@
                         <li><a href="${homeUrl}">Index</a></li>
                         
                         <c:choose>
-                            <c:when test="${not empty admin}">
-                                <li class="panel dropdown"> 
-                                    <a data-toggle="collapse" data-parent="#menu-bar" href="#collapseTwo">
-                                        Admin Panel         
-                                    </a>
-                                    <ul id="collapseTwo" class="panel-collapse collapse">
-                                        <c:url value="/manage_user" var="manageUsersUrl" />
-                                        <li><a href="${manageUsersUrl}">Show and manage all users</a></li>
-                                        
-                                        <c:url value="/manage_invoice" var="manageInvoicesUrl" />
-                                        <li><a href="${manageInvoicesUrl}">Show all invoices</a></li>
-                                    </ul>
-                                </li>
-                            </c:when>
-                            <c:otherwise>
-                                
-                            </c:otherwise>
-                        </c:choose>    
-                        
-                        <c:choose>
                             <c:when test="${not empty user}">
                                 <c:url value="/conversation" var="conversationUrl" />
                                 <li><a href="${conversationUrl}">Conversation page</a></li>
@@ -86,7 +66,27 @@
                                 <c:url value="/register" var="registerUrl" />
                                 <li><a href="${registerUrl}">Register</a></li>
                                 </c:otherwise>
-                            </c:choose>    
+                            </c:choose>   
+                        
+                        <c:choose>
+                            <c:when test="${not empty admin}">
+                                <li class="panel dropdown panel-danger"> 
+                                    <a data-toggle="collapse" data-parent="#menu-bar" href="#collapseTwo">
+                                        Admin Panel         
+                                    </a>
+                                    <ul id="collapseTwo" class="panel-collapse collapse" style="list-style-type: none;">
+                                        <c:url value="/manage_user" var="manageUsersUrl" />
+                                        <li><a href="${manageUsersUrl}">Show and manage all users</a></li>
+                                        
+                                        <c:url value="/manage_invoice" var="manageInvoicesUrl" />
+                                        <li><a href="${manageInvoicesUrl}">Show all invoices</a></li>
+                                    </ul>
+                                </li>
+                            </c:when>
+                            <c:otherwise>
+                                
+                            </c:otherwise>
+                        </c:choose>
                         
                     </ul>
                 </div>
