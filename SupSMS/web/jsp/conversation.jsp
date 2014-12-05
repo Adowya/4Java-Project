@@ -80,7 +80,7 @@
                             </div>
                         </div>
                         <div class="newmsg-form">
-                            <form id="formMsg" action="" method="POST">
+                            <form id="formMsg" action="conversation" method="POST">
                                 <input type="text" name="message" placeholder="Message">
                                 <button type="submit" class="btn btn-link">Send</button>
                             </form>
