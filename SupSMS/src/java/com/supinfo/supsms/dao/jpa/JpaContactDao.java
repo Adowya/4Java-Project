@@ -7,6 +7,7 @@ package com.supinfo.supsms.dao.jpa;
 
 import com.supinfo.supsms.dao.ContactDao;
 import com.supinfo.supsms.entity.Contact;
+import com.supinfo.supsms.entity.Users;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -58,15 +59,15 @@ public class JpaContactDao implements ContactDao{
     }
     
     @Override
-    public List<Contact> findContactByFilter(Date update) {
+    public List<Contact> findContactByFilter(Users users) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Contact> query = cb.createQuery(Contact.class);
         Root<Contact> contact = query.from(Contact.class);
         
         List<Predicate> predicates = new ArrayList<>();
-        if(update != null) {
+        if(users != null) {
             predicates.add(
-                    cb.equal(contact.get("update"), update)
+                    cb.equal(contact.get("_users"), users)
             );
         }
         

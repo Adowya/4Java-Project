@@ -8,6 +8,8 @@ package com.supinfo.supsms.entity;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,26 +24,39 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Contact extends Customer implements Serializable {
     
     @Temporal(TemporalType.TIMESTAMP)
-    private Date update;
+    private Date updated;
     
-    public Contact(){
-        super();
+    @ManyToOne
+    @JoinColumn(name = "fk_users")
+    private Users _users;
+    
+    /**
+     * @return the updated
+     */
+    public Date getUpdated() {
+        return updated;
     }
     
     /**
-     * @return the update
+     * @param updated the updated to set
      */
-    public Date getUpdate() {
-        return update;
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
-    
+
     /**
-     * @param update the update to set
+     * @return the _users
      */
-    public void setUpdate(Date update) {
-        this.update = update;
+    public Users getUsers() {
+        return _users;
     }
-    
+
+    /**
+     * @param _users the _users to set
+     */
+    public void setUsers(Users _users) {
+        this._users = _users;
+    }
     
     
 }

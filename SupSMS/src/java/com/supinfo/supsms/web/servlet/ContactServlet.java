@@ -6,9 +6,11 @@
 package com.supinfo.supsms.web.servlet;
 
 import com.supinfo.supsms.entity.Contact;
+import com.supinfo.supsms.entity.Users;
 import com.supinfo.supsms.service.ContactService;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,6 +30,16 @@ public class ContactServlet extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
+        Users user = (Users) req.getSession().getAttribute("user");
+        // Find contact by _user.id
+        List<Contact> contactList = contactService.findContactByFilter(user);
+        // Set contacts on view
+        
+        for(Contact contact : contactList) {
+            System.out.println(contact.getFirst_name());
+        }
+        req.setAttribute("contact", contactList);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
     
@@ -47,7 +59,13 @@ public class ContactServlet extends HttpServlet {
         
         Date created = new Date();
         contact.setCreated(created);
-        contact.setUpdate(created);
+        contact.setUpdated(created);
+        
+        Users user = (Users) req.getSession().getAttribute("user");
+        contact.setUsers(user);
+        
+        System.out.println(contact.getEmail());
+        System.out.println(contact.getUpdated());
         
         contactService.addContact(contact);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);

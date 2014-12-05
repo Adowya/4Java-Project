@@ -57,11 +57,9 @@ public class RegisterServlet extends HttpServlet {
         users.setCreated(created);
         
         //For Admin
-        //         users.setRole_member(2;
+        //users.setRole_member(2;
         //For User
         users.setRole_member(1);
-        
-        
         usersService.addUsers(users);
         
         // First Invoice

@@ -23,27 +23,17 @@
                         <div class="col-lg-6 full-height">
                             <h1>Contact List</h1>
                             <ul class="widget-list" id="developers">
-                                <li>
-                                    <a class="widget-list-link active">
-                                        <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
-                                        Joe Doe #1 <span>489218E3</span>
-                                    </a>
-                                    <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
-                                </li>
-                                <li>
-                                    <a class="widget-list-link">
-                                        <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
-                                        Joe Doe #1 <span>489218E3</span>
-                                    </a>
-                                    <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
-                                </li>
-                                <li>
-                                    <a class="widget-list-link">
-                                        <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
-                                        Joe Doe #1 <span>489218E3</span>
-                                    </a>
-                                    <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
-                                </li>                       
+                                
+                                <c:forEach items="${contact}" var="contact">
+                                    <li>
+                                        <a class="widget-list-link " href="edit_contact?id=${contact.id}" >
+                                            <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
+                                            ${contact.first_name}  ${contact.last_name}<span>${contact.phone}</span>
+                                        </a>
+                                        <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
+                                    </li>
+                                        
+                                </c:forEach>                      
                             </ul>
                         </div>
                         <div class="col-md-6 full-height">
@@ -53,7 +43,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="form_wrapper">
-                                        <form class="register" action="register" method="post">
+                                        <form class="register" action="index" method="post">
                                             <div class="input-group input-group-lg">
                                                 <span class="input-group-addon">
                                                     <span style="color: #66afe9;" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 

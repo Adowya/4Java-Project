@@ -6,6 +6,7 @@
 package com.supinfo.supsms.dao;
 
 import com.supinfo.supsms.entity.Contact;
+import com.supinfo.supsms.entity.Users;
 import java.util.Date;
 import java.util.List;
 
@@ -26,6 +27,6 @@ public interface ContactDao {
     
     public void removeContact(Contact findContactById);
     
-    public List<Contact> findContactByFilter(Date update);
+    public List<Contact> findContactByFilter(Users users);
     
 }

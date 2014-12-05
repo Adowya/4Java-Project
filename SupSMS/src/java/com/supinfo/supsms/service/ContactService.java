@@ -7,6 +7,7 @@ package com.supinfo.supsms.service;
 
 import com.supinfo.supsms.dao.ContactDao;
 import com.supinfo.supsms.entity.Contact;
+import com.supinfo.supsms.entity.Users;
 import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
@@ -42,8 +43,8 @@ public class ContactService {
         contactDao.removeContact(findContactById);
     }
     
-    public List<Contact> findContactByFilter(Date update){
-        return contactDao.findContactByFilter(update);
+    public List<Contact> findContactByFilter(Users users){
+        return contactDao.findContactByFilter(users);
     }
     
 }
