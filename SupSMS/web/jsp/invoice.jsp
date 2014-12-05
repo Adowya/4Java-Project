@@ -23,17 +23,17 @@
                                 <th data-field="id">ID</th>
                                 <th data-field="price">Price</th>
                                 <th data-field="date">Date</th>
-                                <th data-field="date">Action</th>
+                                <th data-field="action">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach items="${invoice}" var="station">
+                            <c:forEach items="${invoice}" var="invoice">
                                 <tr id="tr_id_1" class="tr-class-1">
-                                    <td id="td_id_1" class="td-class-1">${station.id}</td>
-                                    <td>${station.price}</td>
-                                    <td>${station.created}</td>
+                                    <td id="td_id_1" class="td-class-1">${invoice.id}</td>
+                                    <td>${invoice.price}</td>
+                                    <td>${invoice.created}</td>
                                     <td>
-                                        <button type="button" class="btn btn-warning">
+                                        <button onclick="window.location.href='edit_invoice?id=${invoice.id}';" type="button" class="btn btn-warning">
                                             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                         </button>
                                         <button type="button" class="btn btn-danger">

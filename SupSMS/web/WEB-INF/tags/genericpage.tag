@@ -40,9 +40,6 @@
                     <ul class="nav nav-stacked" id="menu-bar">
                         <li><a href="${homeUrl}">Index</a></li>
                         
-                        <c:url value="/offer" var="offerUrl" />
-                        <li><a href="${offerUrl}">Offer page</a></li>
-                        
                         <c:choose>
                             <c:when test="${not empty admin}">
                                 <li class="panel dropdown"> 
@@ -80,6 +77,9 @@
                                 </c:when>
                             
                             <c:otherwise>
+                                <c:url value="/offer" var="offerUrl" />
+                                <li><a href="${offerUrl}">Offer page</a></li>
+                                
                                 <c:url value="/login" var="loginUrl" />
                                 <li><a href="${loginUrl}">Log in</a></li>
                                 
