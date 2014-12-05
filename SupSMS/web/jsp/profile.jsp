@@ -23,6 +23,7 @@
                         <div class="panel-body">
                             <div class="form_wrapper">
                                 <form class="register" action="register" method="post">
+                                    <span>Phone number :</span>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 
@@ -30,6 +31,7 @@
                                         <input type="text" value="${requestScope.user.phone}" name="user_phone" class="form-control" disabled="true">
                                     </div>
                                     <br />
+                                    <span>Mail :</span>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 
@@ -37,6 +39,7 @@
                                         <input type="email" value="${requestScope.user.email}" name="user_email" class="form-control">
                                     </div>
                                     <br />
+                                    <span>Firstname :</span>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-user" aria-hidden="true"></span> 
@@ -44,6 +47,7 @@
                                         <input type="text" value="${requestScope.user.first_name}" name="user_first_name" class="form-control">
                                     </div>
                                     <br />
+                                    <span>Lastname :</span>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-user" aria-hidden="true"></span> 
@@ -51,6 +55,7 @@
                                         <input type="text" value="${requestScope.user.last_name}" name="user_last_name" class="form-control">
                                     </div>
                                     <br />
+                                    <span>Zip :</span>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-home" aria-hidden="true"></span> 
@@ -58,6 +63,7 @@
                                         <input type="text" value="${requestScope.user.zip}" name="user_zip" class="form-control">
                                     </div>
                                     <br />
+                                    <span>Password :</span>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-lock" aria-hidden="true"></span> 
@@ -65,6 +71,7 @@
                                         <input type="password" value="${requestScope.user.password}" name="user_password" class="form-control">
                                     </div>
                                     <br />
+                                    <span>Credit card :</span>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> 
