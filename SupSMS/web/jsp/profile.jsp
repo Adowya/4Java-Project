@@ -15,59 +15,70 @@
     <jsp:body>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <form action="profile" method="post">
-                        <table class="profile_tab">
-                            <h1>User profile</h1>
-                            <thead>
-                            <th>Information</th>
-                            <th>Value</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>${requestScope.user.id}</td>
-                                </tr>
-                                <tr>
-                                    <td>First Name</td>
-                                    <td><input type="text" value="${requestScope.user.first_name}" name="user_first_name" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Last Name</td>
-                                    <td><input type="text" value="${requestScope.user.last_name}" name="user_last_name" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Mail</td>
-                                    <td><input type="text" value="${requestScope.user.email}" name="user_email" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Password</td>
-                                    <td><input type="password" value="${requestScope.user.password}" name="user_password" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Phone</td>
-                                    <td><input type="text" value="${requestScope.user.phone}" name="user_phone" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Zip</td>
-                                    <td><input type="text" value="${requestScope.user.zip}" name="user_zip" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Card</td>
-                                    <td><input type="text" value="${requestScope.user.card}" name="user_card" /></td>
-                                </tr>
-                                <tr>
-                                </tr>
-                            <td></td>
-                            <td><div>
-                                    <input type="submit" value="Modifier">
-                                </div></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                            
-                    </form>
-                        
+                <div class="col-md-offset-3 col-md-6 col-xs-12 col-sm-offset-1 col-sm-10 full-height">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">USER ACCOUNT</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form_wrapper">
+                                <form class="register" action="register" method="post">
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-addon">
+                                            <span style="color: #66afe9;" class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 
+                                        </span>
+                                        <input type="text" value="${requestScope.user.phone}" name="user_phone" class="form-control" disabled="true">
+                                    </div>
+                                    <br />
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-addon">
+                                            <span style="color: #66afe9;" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 
+                                        </span>
+                                        <input type="email" value="${requestScope.user.email}" name="user_email" class="form-control">
+                                    </div>
+                                    <br />
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-addon">
+                                            <span style="color: #66afe9;" class="glyphicon glyphicon-user" aria-hidden="true"></span> 
+                                        </span>
+                                        <input type="text" value="${requestScope.user.first_name}" name="user_first_name" class="form-control">
+                                    </div>
+                                    <br />
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-addon">
+                                            <span style="color: #66afe9;" class="glyphicon glyphicon-user" aria-hidden="true"></span> 
+                                        </span>
+                                        <input type="text" value="${requestScope.user.last_name}" name="user_last_name" class="form-control">
+                                    </div>
+                                    <br />
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-addon">
+                                            <span style="color: #66afe9;" class="glyphicon glyphicon-home" aria-hidden="true"></span> 
+                                        </span>
+                                        <input type="text" value="${requestScope.user.zip}" name="user_zip" class="form-control">
+                                    </div>
+                                    <br />
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-addon">
+                                            <span style="color: #66afe9;" class="glyphicon glyphicon-lock" aria-hidden="true"></span> 
+                                        </span>
+                                        <input type="password" value="${requestScope.user.password}" name="user_password" class="form-control">
+                                    </div>
+                                    <br />
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-addon">
+                                            <span style="color: #66afe9;" class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> 
+                                        </span>
+                                        <input type="text" value="${requestScope.user.card}" name="user_card" class="form-control">
+                                    </div>
+                                    <br />
+                                    <div class="bottom">
+                                        <button type="submit" value="Submit" class="btn btn-primary">Modify my informations</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
