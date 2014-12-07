@@ -6,7 +6,6 @@
 package com.supinfo.supsms.web.servlet;
 
 import com.supinfo.supsms.entity.Contact;
-import com.supinfo.supsms.entity.Users;
 import com.supinfo.supsms.service.ContactService;
 import java.io.IOException;
 import java.util.Date;
@@ -22,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Clement
  */
-@WebServlet(name = "ContactServlet", urlPatterns = {"/index"})
+@WebServlet(name = "ContactServlet", urlPatterns = {"/contact"})
 public class ContactServlet extends HttpServlet {
     
     @EJB
@@ -30,45 +29,36 @@ public class ContactServlet extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Long id = Long.parseLong(req.getParameter("id"));
+        Contact contact = contactService.findContactById(id);
         
-        Users user = (Users) req.getSession().getAttribute("user");
-        // Find contact by _user.id
-        List<Contact> contactList = contactService.findContactByFilter(user);
-        // Set contacts on view
-        
-        for(Contact contact : contactList) {
-            System.out.println(contact.getFirst_name());
-        }
-        req.setAttribute("contact", contactList);
-        req.getRequestDispatcher("/index.jsp").forward(req, resp);
+        req.setAttribute("contact", contact);
+        req.getRequestDispatcher("/jsp/contact.jsp").forward(req, resp);
     }
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Long id = Long.parseLong(req.getParameter("id"));
+        Contact contact = contactService.findContactById(id);
         
-        Contact contact = new Contact();
+        contact.setFirst_name(req.getParameter("user_first_name"));
+        contact.setLast_name(req.getParameter("user_last_name"));
+        contact.setEmail(req.getParameter("user_email"));
         
-        contact.setFirst_name(req.getParameter("first_name"));
-        contact.setLast_name(req.getParameter("last_name"));
-        contact.setEmail(req.getParameter("email"));
+        String user_phone = req.getParameter("user_phone");
+        Long user_phone_long = Long.valueOf(user_phone);
+        contact.setPhone(user_phone_long);
         
-        Long phone = Long.parseLong(req.getParameter("phone"));
-        contact.setPhone(phone);
-        Long zip = Long.parseLong(req.getParameter("zip"));
-        contact.setZip(zip);
+        String user_zip = req.getParameter("user_zip");
+        Long user_zip_long = Long.valueOf(user_zip);
+        contact.setZip(user_zip_long);
         
-        Date created = new Date();
-        contact.setCreated(created);
-        contact.setUpdated(created);
+        Date updated = new Date();
+        contact.setUpdated(updated);
         
-        Users user = (Users) req.getSession().getAttribute("user");
-        contact.setUsers(user);
+        contactService.updateContact(contact);
         
-        System.out.println(contact.getEmail());
-        System.out.println(contact.getUpdated());
-        
-        contactService.addContact(contact);
-        req.getRequestDispatcher("/index.jsp").forward(req, resp);
+        resp.sendRedirect(req.getContextPath() + "/contact");
     }
     
     

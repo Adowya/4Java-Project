@@ -23,7 +23,7 @@
                                 <th data-field="id">ID</th>
                                 <th data-field="price">Price</th>
                                 <th data-field="date">Date</th>
-                                <th data-field="action">Action</th>
+                                <!--<th data-field="action">Action</th>-->
                             </tr>
                         </thead>
                         <tbody>
@@ -32,14 +32,14 @@
                                     <td id="td_id_1" class="td-class-1">${invoice.id}</td>
                                     <td>${invoice.price}</td>
                                     <td>${invoice.created}</td>
-                                    <td>
+<!--                                    <td>
                                         <button type="button" class="btn btn-warning">
                                             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                         </button>
                                         <button type="button" class="btn btn-danger">
                                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                         </button>
-                                    </td>
+                                    </td>-->
                                         
                                 </tr>
                             </c:forEach>

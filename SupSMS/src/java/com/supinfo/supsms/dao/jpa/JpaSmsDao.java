@@ -61,17 +61,33 @@ public class JpaSmsDao implements SmsDao {
         List<Predicate> predicates = new ArrayList<>();
         if(users != null) {
             predicates.add(
-                    cb.equal(sms.get("user"), users)
+                    cb.equal(sms.get("_users"), users)
             );
         }
         query.where(predicates.toArray(new Predicate[predicates.size()]));
-        
         return em.createQuery(query).getResultList();
     }
     
     @Override
-    public List<Sms> findSmsByUserandCustomerId(Users users, Contact contact) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Sms> findSmsByUserandContactId(Users users, Contact contact) {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Sms> query = cb.createQuery(Sms.class);
+        Root<Sms> sms = query.from(Sms.class);
+        
+        List<Predicate> predicates = new ArrayList<>();
+        if(users != null) {
+            predicates.add(
+                    cb.equal(sms.get("_users"), users)
+            );
+        }
+        if(contact != null) {
+            predicates.add(
+                    cb.equal(sms.get("_contact"), contact)
+            );
+        }
+        
+        query.where(predicates.toArray(new Predicate[predicates.size()]));
+        return em.createQuery(query).getResultList();
     }
     
 }

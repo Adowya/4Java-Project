@@ -44,8 +44,8 @@ public class SmsService {
         return smsDao.findSmsByUserId(users);
     }
     
-    public List<Sms> findSmsByUserandCustomerId(Users users, Contact contact){
-        return smsDao.findSmsByUserandCustomerId(users, contact);
+    public List<Sms> findSmsByUserandContactId(Users users, Contact contact){
+        return smsDao.findSmsByUserandContactId(users, contact);
     }
     
     

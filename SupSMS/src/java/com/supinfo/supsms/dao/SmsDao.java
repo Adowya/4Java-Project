@@ -29,6 +29,6 @@ public interface SmsDao {
     
     public List<Sms> findSmsByUserId(Users users);
     
-    public List<Sms> findSmsByUserandCustomerId(Users users, Contact contact);  
+    public List<Sms> findSmsByUserandContactId(Users users, Contact contact);  
     
 }

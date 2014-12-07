@@ -26,11 +26,19 @@
                                 
                                 <c:forEach items="${contact}" var="contact">
                                     <li>
-                                        <a class="widget-list-link " href="edit_contact?id=${contact.id}" >
+                                        <a class="widget-list-link " href="conversation?id=${contact.id}" >
                                             <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
                                             ${contact.first_name}  ${contact.last_name}<span>${contact.phone}</span>
                                         </a>
-                                        <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
+                                        <div title="Show contact card" class="edit-contact">
+                                            <button onclick="window.location.href='contact?id=${contact.id}';" type="button" class="btn btn-warning">
+                                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                            </button>
+                                                <!--If!a!contact!is!deleted,!his!conversation!is!deleted.!-->
+                                            <button type="button" class="btn btn-danger">
+                                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                            </button>
+                                        </div>
                                     </li>
                                         
                                 </c:forEach>                      

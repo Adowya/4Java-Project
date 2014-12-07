@@ -33,9 +33,7 @@
                                     <td>${users.last_name}</td>
                                     <td>${users.first_name}</td>
                                     <td>
-                                        <button type="button" class="btn btn-warning">
-                                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                                        </button>
+                                        
                                         <button type="button" class="btn btn-danger">
                                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                         </button>

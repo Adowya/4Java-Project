@@ -27,57 +27,11 @@
                             <div class="bubble">
                                 Blue text bubble
                             </div>
-                            <div class="bubble">
-                                A bubble containing lots and lots and lots and lots of content on multiple lines
-                            </div>
-                            <div class="bubble">
-                                Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
-                            </div>
-                            <div class="bubble">
-                                Blue text bubble
-                            </div>
-                            <div class="bubble">
-                                A bubble containing lots and lots and lots and lots of content on multiple lines
-                            </div>
-                            <div class="bubble">
-                                Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
-                            </div>
-                            <div class="bubble">
-                                Blue text bubble
-                            </div>
-                            <div class="bubble">
-                                A bubble containing lots and lots and lots and lots of content on multiple lines
-                            </div>
-                            <div class="bubble">
-                                Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
-                            </div>
-                            <div class="bubble">
-                                Blue text bubble
-                            </div>
-                            <div class="bubble">
-                                A bubble containing lots and lots and lots and lots of content on multiple lines
-                            </div>
-                            <div class="bubble">
-                                Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
-                            </div>
-                            <div class="bubble">
-                                Blue text bubble
-                            </div>
-                            <div class="bubble">
-                                A bubble containing lots and lots and lots and lots of content on multiple lines
-                            </div>
-                            <div class="bubble">
-                                Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
-                            </div>
-                            <div class="bubble">
-                                Blue text bubble
-                            </div>
-                            <div class="bubble">
-                                A bubble containing lots and lots and lots and lots of content on multiple lines
-                            </div>
-                            <div class="bubble">
-                                Bubblewitharidiculouslylongwordwhichwrapseffortlesslyontotwolines
-                            </div>
+                            <c:forEach items="${sms}" var="sms">
+                                <div class="bubble">
+                                    ${sms.text}
+                                </div>
+                            </c:forEach>
                         </div>
                         <div class="newmsg-form">
                             <form id="formMsg" action="conversation" method="POST">
@@ -90,42 +44,20 @@
                 <div class="col-md-6 conv full-height">
                     <h1>Contact List</h1>
                     <ul class="widget-list" id="developers">
-                        <li>
-                            <a class="widget-list-link active">
-                                <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
-                                Joe Doe #1 <span>489218E3</span>
-                            </a>
-                            <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
-                        </li>
-                        <li>
-                            <a class="widget-list-link">
-                                <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
-                                Joe Doe #1 <span>489218E3</span>
-                            </a>
-                            <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
-                        </li>
-                        <li>
-                            <a class="widget-list-link">
-                                <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
-                                Joe Doe #1 <span>489218E3</span>
-                            </a>
-                            <div title="Show contact card" class="edit-contact"><span class="glyphicon glyphicon-user"></span></div>
-                        </li>                       
+                        
+                        <c:forEach items="${contact}" var="contact">
+                            <li>
+                                <a class="widget-list-link " href="conversation?id=${contact.id}" >
+                                    <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
+                                    ${contact.first_name}  ${contact.last_name}<span>${contact.phone}</span>
+                                </a>
+                                <div title="Show contact card" class="edit-contact">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </div>
+                            </li>
+                                
+                        </c:forEach>                      
                     </ul>
-                    <table>
-                        <thead>
-                        <th>Nickname</th>
-                        <th>Action</th>
-                        </thead>
-                        <tbody>
-                            <c:forEach items="${requestScope.contactList}" var="c">
-                                <tr>
-                                    <td><c:out value="${c.name}" /></td>
-                                    <td>Edit</td>
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
@@ -137,7 +69,7 @@
                 }
                 $("#progress-msg").css({ width: '100%' });
                 setTimeout(function(){
-                     $("#formMsg").submit();
+                    $("#formMsg").submit();
                 },1000);
             });
             
