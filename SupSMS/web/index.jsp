@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="form_wrapper">
-                                        <form class="register" action="index" method="post">
+                                        <form class="index" action="index" method="post">
                                             <div class="input-group input-group-lg">
                                                 <span class="input-group-addon">
                                                     <span style="color: #66afe9;" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 

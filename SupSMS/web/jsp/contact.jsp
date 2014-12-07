@@ -23,7 +23,17 @@
                         </div>
                         <div class="panel-body">
                             <div class="form_wrapper">
-                                <form class="register" action="index" method="post">
+                                <form class="register" action="contact" method="post">
+                                    <label>Id :</label>
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-addon">
+                                            <span style="color: #66afe9;" class="glyphicon glyphicon-book" aria-hidden="true"></span> 
+                                        </span>
+                                        <input type="text" value="${requestScope.contact.id}" name="contact_id" class="form-control">
+                                    </div>
+                                    <br />
+                                    <label>Email :</label>
+                                        
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 
@@ -31,6 +41,7 @@
                                         <input type="email" value="${requestScope.contact.email}" name="email" class="form-control" placeholder="Email">
                                     </div>
                                     <br />
+                                    <label>First name :</label>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-user" aria-hidden="true"></span> 
@@ -38,6 +49,7 @@
                                         <input type="text" value="${requestScope.contact.first_name}" name="first_name" class="form-control" placeholder="Firstname">
                                     </div>
                                     <br />
+                                    <label>Last name :</label>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-user" aria-hidden="true"></span> 
@@ -45,6 +57,7 @@
                                         <input type="text" value="${requestScope.contact.last_name}" name="last_name" class="form-control" placeholder="Lastname">
                                     </div>
                                     <br />
+                                    <label>Zip :</label>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-home" aria-hidden="true"></span> 
@@ -52,6 +65,7 @@
                                         <input type="text" value="${requestScope.contact.zip}" name="zip" class="form-control" placeholder="Zip">
                                     </div>
                                     <br />
+                                    <label>Phone :</label>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 

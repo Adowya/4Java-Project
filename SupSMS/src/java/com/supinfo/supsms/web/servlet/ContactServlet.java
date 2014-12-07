@@ -38,29 +38,33 @@ public class ContactServlet extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Long id = Long.parseLong(req.getParameter("id"));
-        Contact contact = contactService.findContactById(id);
-        
-        contact.setFirst_name(req.getParameter("user_first_name"));
-        contact.setLast_name(req.getParameter("user_last_name"));
-        contact.setEmail(req.getParameter("user_email"));
-        
-        String user_phone = req.getParameter("user_phone");
-        Long user_phone_long = Long.valueOf(user_phone);
-        contact.setPhone(user_phone_long);
-        
-        String user_zip = req.getParameter("user_zip");
-        Long user_zip_long = Long.valueOf(user_zip);
-        contact.setZip(user_zip_long);
-        
-        Date updated = new Date();
-        contact.setUpdated(updated);
-        
-        contactService.updateContact(contact);
-        
-        resp.sendRedirect(req.getContextPath() + "/contact");
+        String param = req.getParameter("contact_id");
+        if(param!=null && !param.isEmpty()){
+            System.out.print(param);
+            Long contactId = Long.valueOf(param);
+            Contact contact = contactService.findContactById(contactId);
+            
+            contact.setFirst_name(req.getParameter("first_name"));
+            contact.setLast_name(req.getParameter("last_name"));
+            contact.setEmail(req.getParameter("email"));
+            
+            String user_phone = req.getParameter("phone");
+            Long user_phone_long = Long.valueOf(user_phone);
+            contact.setPhone(user_phone_long);
+            
+            String user_zip = req.getParameter("zip");
+            Long user_zip_long = Long.valueOf(user_zip);
+            contact.setZip(user_zip_long);
+            
+            Date updated = new Date();
+            contact.setUpdated(updated);
+            
+            contactService.updateContact(contact);
+            
+            resp.sendRedirect(req.getContextPath() + "/contact?id="+contactId);
+        }else {
+            System.out.print("param == null");
+        }
     }
-    
-    
     
 }

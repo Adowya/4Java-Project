@@ -36,17 +36,12 @@ public class ProfileServlet extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
         Users users = (Users) req.getSession().getAttribute("user");
         
         users.setFirst_name(req.getParameter("user_first_name"));
         users.setLast_name(req.getParameter("user_last_name"));
         users.setEmail(req.getParameter("user_email"));
         users.setPassword(req.getParameter("user_password"));
-        
-        String user_phone = req.getParameter("user_phone");
-        Long user_phone_long = Long.valueOf(user_phone);
-        users.setPhone(user_phone_long);
         
         String user_zip = req.getParameter("user_zip");
         Long user_zip_long = Long.valueOf(user_zip);
@@ -56,11 +51,13 @@ public class ProfileServlet extends HttpServlet {
         Long user_card_long = Long.valueOf(user_card);
         users.setCard(user_card_long);
         
+        String user_phone = req.getParameter("user_phone");
+        Long user_phone_long = Long.valueOf(user_phone);
+        users.setPhone(user_phone_long);
+        
         usersService.updateUsers(users);
         
         resp.sendRedirect(req.getContextPath() + "/profile");
     }
-    
-    
     
 }

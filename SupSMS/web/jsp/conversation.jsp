@@ -44,7 +44,6 @@
                 <div class="col-md-6 conv full-height">
                     <h1>Contact List</h1>
                     <ul class="widget-list" id="developers">
-                        
                         <c:forEach items="${contact}" var="contact">
                             <li>
                                 <a class="widget-list-link " href="conversation?id=${contact.id}" >

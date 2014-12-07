@@ -22,13 +22,13 @@
                         </div>
                         <div class="panel-body">
                             <div class="form_wrapper">
-                                <form class="register" action="register" method="post">
+                                <form class="profile" action="profile" method="post">
                                     <label>Phone number :</label>
                                     <div class="input-group input-group-lg">
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 
                                         </span>
-                                        <input type="text" value="${requestScope.user.phone}" name="user_phone" class="form-control" disabled="true">
+                                        <input type="text" value="${requestScope.user.phone}" name="user_phone" class="form-control">
                                     </div>
                                     <br />
                                     <label>Mail :</label>

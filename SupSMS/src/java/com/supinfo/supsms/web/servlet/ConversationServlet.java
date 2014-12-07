@@ -70,7 +70,10 @@ public class ConversationServlet extends HttpServlet {
             sms.setCreated(created);
             
             smsService.addSms(sms);
+        }else {
+            System.out.print("param == null");
         }
+        
         resp.sendRedirect(getServletContext().getContextPath());
 //        req.getRequestDispatcher("/jsp/conversation.jsp").forward(req, resp);
     }
