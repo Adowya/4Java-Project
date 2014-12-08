@@ -24,14 +24,7 @@
                         <div class="panel-body">
                             <div class="form_wrapper">
                                 <form class="register" action="contact" method="post">
-                                    <label>Id :</label>
-                                    <div class="input-group input-group-lg">
-                                        <span class="input-group-addon">
-                                            <span style="color: #66afe9;" class="glyphicon glyphicon-book" aria-hidden="true"></span> 
-                                        </span>
-                                        <input type="text" value="${requestScope.contact.id}" name="contact_id" class="form-control">
-                                    </div>
-                                    <br />
+                                    <input type="hidden" value="${requestScope.contact.id}" name="contact_id" class="form-control">
                                     <label>Email :</label>
                                         
                                     <div class="input-group input-group-lg">

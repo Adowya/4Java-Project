@@ -48,33 +48,40 @@ public class ConversationServlet extends HttpServlet {
         }
         
         req.setAttribute("contact", contactList);
+        req.setAttribute("contactId", param);
         req.getRequestDispatcher("/jsp/conversation.jsp").forward(req, resp);
     }
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Users user = (Users) req.getSession().getAttribute("user");
-        String param = req.getParameter("id");
+        String param = req.getParameter("param");
+        
         if(param!=null && !param.isEmpty()){
-            System.out.print("param != null");
-            
             Long contactId = Long.valueOf(param);
             Contact contact = contactService.findContactById(contactId);
             
-            Sms sms = new Sms();
-            sms.setText(req.getParameter("message"));
-            sms.setContact(contact);
-            sms.setUsers(user);
+            if(req.getParameter("message") != null){
+                Sms sms = new Sms();
+                sms.setText(req.getParameter("message"));
+                sms.setContact(contact);
+                sms.setUsers(user);
+                
+                Date created = new Date();
+                sms.setCreated(created);
+                
+                smsService.addSms(sms);
+//                resp.sendRedirect("../conversation?id=" + contactId);
+                req.getRequestDispatcher("/jsp/conversation.jsp").forward(req, resp);
+            }else {
+                System.out.print("message == null");
+            }
             
-            Date created = new Date();
-            sms.setCreated(created);
-            
-            smsService.addSms(sms);
         }else {
             System.out.print("param == null");
+            resp.sendRedirect("/conversation?id=" + req.getParameter("param"));
         }
-        
-        resp.sendRedirect(getServletContext().getContextPath());
+//        resp.sendRedirect(getServletContext().getContextPath());
 //        req.getRequestDispatcher("/jsp/conversation.jsp").forward(req, resp);
     }
     

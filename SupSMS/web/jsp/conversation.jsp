@@ -28,15 +28,21 @@
                                 Blue text bubble
                             </div>
                             <c:forEach items="${sms}" var="sms">
+                                ${sms.created}
                                 <div class="bubble">
                                     ${sms.text}
                                 </div>
                             </c:forEach>
                         </div>
                         <div class="newmsg-form">
+                            <!--                            <form:form id="formMsg" action="conversation">
+                                                             <input type="text" name="message" placeholder="Message">
+                                                            <button type="submit" name="send" class="btn btn-link">Send</button>
+                                                        </form:form>-->
                             <form id="formMsg" action="conversation" method="POST">
                                 <input type="text" name="message" placeholder="Message">
-                                <button type="submit" class="btn btn-link">Send</button>
+                                <button type="submit" name="send" class="btn btn-link">Send</button>
+                                <input type="hidden" name="param" value="${contactId}">
                             </form>
                         </div>
                     </div>
