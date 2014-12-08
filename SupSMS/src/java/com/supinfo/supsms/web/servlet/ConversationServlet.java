@@ -71,8 +71,7 @@ public class ConversationServlet extends HttpServlet {
                 sms.setCreated(created);
                 
                 smsService.addSms(sms);
-//                resp.sendRedirect("../conversation?id=" + contactId);
-                req.getRequestDispatcher("/jsp/conversation.jsp").forward(req, resp);
+                resp.sendRedirect("./conversation?id=" + contactId);
             }else {
                 System.out.print("message == null");
             }
@@ -82,6 +81,7 @@ public class ConversationServlet extends HttpServlet {
             resp.sendRedirect("/conversation?id=" + req.getParameter("param"));
         }
 //        resp.sendRedirect(getServletContext().getContextPath());
+//                resp.sendRedirect("../conversation?id=" + contactId);
 //        req.getRequestDispatcher("/jsp/conversation.jsp").forward(req, resp);
     }
     
