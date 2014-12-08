@@ -24,9 +24,6 @@
                             </div>
                         </div>
                         <div class="conversation-msg">
-                            <div class="bubble">
-                                Blue text bubble
-                            </div>
                             <c:forEach items="${sms}" var="sms">
                                 ${sms.created}
                                 <div class="bubble">
