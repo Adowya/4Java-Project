@@ -25,7 +25,9 @@
                         </div>
                         <div class="conversation-msg">
                             <c:forEach items="${sms}" var="sms">
-                                ${sms.created}
+                                <div class="bubble-date">
+                                    ${sms.created}
+                                </div>
                                 <div class="bubble">
                                     ${sms.text}
                                 </div>

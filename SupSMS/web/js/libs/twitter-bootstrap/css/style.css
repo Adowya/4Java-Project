@@ -1,5 +1,5 @@
 html, body {
-  height: 100%;
+    height: 100%;
 }
 
 input:focus, button:focus {
@@ -8,53 +8,53 @@ input:focus, button:focus {
 
 /* we push the content down some and clean up the edges on mobile devices */
 @media (max-width: 1200px) {
-  .index-stats{
-    zoom: 70%;
-  }
+    .index-stats{
+        zoom: 70%;
+    }
 }
 
 @media (max-width: 968px) {
-  .index-stats{
-    zoom: 60%;
-  }
+    .index-stats{
+        zoom: 60%;
+    }
 }
 
 @media (max-width: 767px) {
-  .content {
-    margin-top: 100px;
-  }
-
-  .index-stats{
-    zoom: 50%;
-  }
+    .content {
+        margin-top: 100px;
+    }
+    
+    .index-stats{
+        zoom: 50%;
+    }
 }
 
 /* When we were on larger screen sizes we can show our vertical menu bar */
 @media (min-width: 768px) {
-  /* clean up some of the default Bootstrap styles for panels in the menu */
-  #menu-bar .panel {
-    margin-bottom: 0;
-    border: none;
-    border-radius: 0;
-    -webkit-box-shadow: none;
-    -box-shadow: none;
-  }
-
-  #navbar {
-    float: left;
-    width: 300px; /* You can adjust the width to your liking, just remember to also adjust the content margin below accordingly */
-    height: 100%;
-  }
-
-  .content {
-    margin-left: 300px; /* If you adjusted the width above you will need to adjust this as well */
-    min-height: 100%;
-  }
-
-  .container {
-    margin-left: 25px; /* We will add a little cushion to our content between the menu bar */
-  }
-
+    /* clean up some of the default Bootstrap styles for panels in the menu */
+    #menu-bar .panel {
+        margin-bottom: 0;
+        border: none;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        -box-shadow: none;
+    }
+    
+    #navbar {
+        float: left;
+        width: 300px; /* You can adjust the width to your liking, just remember to also adjust the content margin below accordingly */
+        height: 100%;
+    }
+    
+    .content {
+        margin-left: 300px; /* If you adjusted the width above you will need to adjust this as well */
+        min-height: 100%;
+    }
+    
+    .container {
+        margin-left: 25px; /* We will add a little cushion to our content between the menu bar */
+    }
+    
 }
 
 .bkg-index{
@@ -65,37 +65,37 @@ input:focus, button:focus {
 }
 
 .conv {
-  border-left: solid 3px black;
+    border-left: solid 3px black;
 }
 
 .full-height {
-  height: 100%;
+    height: 100%;
 }
 
 .navbar-brand {
-  float: none;
+    float: none;
 }
 
 .titleSMS {
-  color: white;
+    color: white;
 }
 
 .panel-title {
-  font-size: 34px;
+    font-size: 34px;
 }
 
 h2 {
-  color: #3278b3;
+    color: #3278b3;
 }
 
 p {
-  color: #66afe9;
-  font-size: 20px;
+    color: #66afe9;
+    font-size: 20px;
 }
 
 .container{
-  padding-top: 60px;
-  height: 100%;
+    padding-top: 60px;
+    height: 100%;
 }
 
 .stat-bubble{
@@ -109,116 +109,116 @@ p {
 }
 
 .index-stats{
-  font-size: 30px;
-  margin-top: 60px;
+    font-size: 30px;
+    margin-top: 60px;
 }
 
 .index-stats div.glyphicon{
-  font-size: 80px;
-  color: #66afe9;
+    font-size: 80px;
+    color: #66afe9;
 }
 
 p.index-footer{
-  float: right;
-  color: #FFFFFF;
-  font-size: 28px;
-  margin-top: 60px;
+    float: right;
+    color: #FFFFFF;
+    font-size: 28px;
+    margin-top: 60px;
 }
 
 p.index-footer span.quote{
-  font-size: 40px;
-  font-family: "Times New Roman", Georgia, Serif;
+    font-size: 40px;
+    font-family: "Times New Roman", Georgia, Serif;
 }
 
 
 /* .widget */
 
 .widget {
-  position: relative;
-  margin: 30px auto 10px;
-  width: 320px;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
+    position: relative;
+    margin: 30px auto 10px;
+    width: 320px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
 }
 
 .widget-tabs {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 9px 12px 0;
-  text-align: left;
-  direction: rtl;
-  background: #f5f5f5;
-  border-bottom: 1px solid #ddd;
-  border-radius: 3px 3px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 9px 12px 0;
+    text-align: left;
+    direction: rtl;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    border-radius: 3px 3px 0 0;
 }
 
 .widget-tab,
 .widget-list:target:first-of-type ~ .widget-tabs > .widget-tab:first-child ~ .widget-tab,
 .widget-list:target:nth-of-type(2) ~ .widget-tabs > .widget-tab:nth-child(2) ~ .widget-tab,
 .widget-list:target:last-of-type ~ .widget-tabs > .widget-tab:last-child ~ .widget-tab {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 3px;
-  line-height: 36px;
-  font-weight: normal;
-  color: #999;
-  background: #fcfcfc;
-  border: solid #ddd;
-  border-width: 1px 1px 0;
-  border-radius: 5px 5px 0 0;
-  padding-bottom: 0;
-  bottom: auto;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 3px;
+    line-height: 36px;
+    font-weight: normal;
+    color: #999;
+    background: #fcfcfc;
+    border: solid #ddd;
+    border-width: 1px 1px 0;
+    border-radius: 5px 5px 0 0;
+    padding-bottom: 0;
+    bottom: auto;
 }
 
 .widget-tab > .widget-tab-link,
 .widget-list:target:first-of-type ~ .widget-tabs > .widget-tab:first-child ~ .widget-tab > .widget-tab-link,
 .widget-list:target:nth-of-type(2) ~ .widget-tabs > .widget-tab:nth-child(2) ~ .widget-tab > .widget-tab-link,
 .widget-list:target:last-of-type ~ .widget-tabs > .widget-tab:last-child ~ .widget-tab > .widget-tab-link {
-  margin: 0;
-  border-top: 0;
+    margin: 0;
+    border-top: 0;
 }
 
 .widget-tab + .widget-tab {
-  margin-right: -1px;
+    margin-right: -1px;
 }
 
 .widget-tab-link {
-  display: block;
-  min-width: 60px;
-  padding: 0 15px;
-  color: inherit;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px 4px 0 0;
+    display: block;
+    min-width: 60px;
+    padding: 0 15px;
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px 4px 0 0;
 }
 
 .widget-list {
-  padding: 0px;
-  display: none;
-  padding-top: 20px;
-  list-style: none;
+    padding: 0px;
+    display: none;
+    padding-top: 20px;
+    list-style: none;
 }
 
 .widget-list > li + li {
-  border-top: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
 }
 
 .widget-list:last-of-type {
-  display: block;
+    display: block;
 }
 
 .widget-list:target {
-  display: block;
+    display: block;
 }
 
 .widget-list:target ~ .widget-list {
-  display: none;
+    display: none;
 }
 
 .widget-list li{
@@ -226,19 +226,19 @@ p.index-footer span.quote{
 }
 
 .widget-list-link {
-  position: relative;
-  display: block;
-  line-height: 18px;
-  padding: 10px 12px;
-  font-weight: bold;
-  color: #555;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 2px;
+    position: relative;
+    display: block;
+    line-height: 18px;
+    padding: 10px 12px;
+    font-weight: bold;
+    color: #555;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 2px;
 }
 
 .widget-list-link:hover {
-  background: #f7f7f7;
+    background: #f7f7f7;
 }
 
 .widget-list-link.active{
@@ -246,21 +246,21 @@ p.index-footer span.quote{
 }
 
 li:last-child > .widget-list-link {
-  border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
 }
 
 .widget-list-link > img {
-  float: left;
-  width: 32px;
-  height: 32px;
-  margin: 2px 12px 0 0;
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin: 2px 12px 0 0;
 }
 
 .widget-list-link > span {
-  display: block;
-  font-size: 11px;
-  font-weight: normal;
-  color: #999;
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    color: #999;
 }
 
 
@@ -305,6 +305,16 @@ li:last-child > .widget-list-link {
     left: -5px;
 }
 
+.bubble-date{
+    clear: both;
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    word-wrap: break-word;
+    color: rgb(123, 123, 129);
+    text-align: center;
+    
+}
 .newmsg-form{
     position: absolute;
     bottom: 0;
@@ -336,8 +346,8 @@ li:last-child > .widget-list-link {
 }
 
 .newmsg-form button{
-   float: right;
-   width: 20%;
+    float: right;
+    width: 20%;
 }
 
 
