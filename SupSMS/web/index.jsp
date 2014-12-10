@@ -120,14 +120,14 @@
                         <div class="col-md-6 full-height index-stats">
                             <div class="stat-bubble">
                                 <div class="glyphicon glyphicon-user" aria-hidden="true"></div>
-                                <div>47</div>
+                                <div>${countUsers}</div>
                                 <div>Registered users</div>
                             </div>
                         </div>
                         <div class="col-md-6 full-height index-stats">
                             <div class="stat-bubble">
                                 <div class="glyphicon glyphicon-envelope" aria-hidden="true"></div>
-                                <div>689</div>
+                                <div>${countSms}</div>
                                 <div>SMS sent</div>
                             </div>
                         </div>

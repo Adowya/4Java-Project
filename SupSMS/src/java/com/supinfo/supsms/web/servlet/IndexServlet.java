@@ -6,8 +6,11 @@
 package com.supinfo.supsms.web.servlet;
 
 import com.supinfo.supsms.entity.Contact;
+import com.supinfo.supsms.entity.Sms;
 import com.supinfo.supsms.entity.Users;
 import com.supinfo.supsms.service.ContactService;
+import com.supinfo.supsms.service.SmsService;
+import com.supinfo.supsms.service.UsersService;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
@@ -28,12 +31,26 @@ public class IndexServlet extends HttpServlet {
     @EJB
     private ContactService contactService;
     
+    @EJB
+    private UsersService usersService;
+    
+    @EJB
+    private SmsService smsService;
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
         Users user = (Users) req.getSession().getAttribute("user");
         // Find contact by _user.id
         List<Contact> contactList = contactService.findContactByFilter(user);
+        
+        //Stats Users
+        List<Users> countUsersList = usersService.getAllUsers();
+        req.setAttribute("countUsers", countUsersList.size());
+        
+        //Stats Sms
+        List<Sms> countSmsList = smsService.getAllSmss();
+        req.setAttribute("countSms", countSmsList.size());
         // Set contacts on view
         
         req.setAttribute("contact", contactList);

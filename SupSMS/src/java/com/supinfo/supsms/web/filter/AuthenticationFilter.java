@@ -36,7 +36,8 @@ public class AuthenticationFilter implements Filter {
         if (path.startsWith("/offer")) return true;
         if (path.startsWith("/js")) return true;
         if (path.startsWith("/login")) return true;
-        if (path.startsWith("/index")) return true;
+        if (path.contentEquals("/")) return true;
+        if (path.contentEquals("")) return true;
         if (path.startsWith("/register")) return true;
         else return false;
     }
@@ -46,6 +47,7 @@ public class AuthenticationFilter implements Filter {
         
         String path = ((HttpServletRequest) request).getServletPath();
         if (excludeFromFilter(path)){
+            System.out.print(path);
             chain.doFilter(request, response);
         } else
         {
