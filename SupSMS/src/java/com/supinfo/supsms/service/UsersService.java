@@ -45,4 +45,8 @@ public class UsersService {
         return usersDao.findUsersByFilter(phone, password);
     }
     
+    public Users findUsersByPhone(String phone) {
+        return usersDao.findUsersByPhone(phone);
+    }
+    
 }

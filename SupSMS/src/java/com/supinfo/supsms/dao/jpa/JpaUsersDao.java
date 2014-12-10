@@ -77,6 +77,22 @@ public class JpaUsersDao implements UsersDao {
         return em.createQuery(query).getSingleResult();
     }
     
+    @Override
+    public Users findUsersByPhone(String phone) {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Users> query = cb.createQuery(Users.class);
+        Root<Users> users = query.from(Users.class);
+        
+        List<Predicate> predicates = new ArrayList<>();
+        if(phone != null) {
+            predicates.add(
+                    cb.equal(users.get("phone"), phone)
+            );
+        }
+        query.where(predicates.toArray(new Predicate[predicates.size()]));
+        return em.createQuery(query).getResultList().get(0);
+    }
+    
     
     
 }

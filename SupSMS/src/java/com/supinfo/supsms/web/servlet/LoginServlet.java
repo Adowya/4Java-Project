@@ -46,13 +46,17 @@ public class LoginServlet extends HttpServlet {
         
         if(phoneParam != null && !phoneParam.isEmpty()){
             if(passwordParam != null && !phoneParam.isEmpty()){
-                Users users = usersService.findUsersByFilter(phoneParam, passwordParam);
-                if(users != null){
-                    req.getSession().setAttribute("user", users);
-                    if(users.getRole_member() == 2){
-                        req.getSession().setAttribute("admin", "adminSession");
+                if(usersService.findUsersByPhone(phoneParam) != null){
+                    Users users = usersService.findUsersByPhone(phoneParam);
+                    String password = Users.get_SHA_256_SecurePassword(req.getParameter("password"), users.getSalt());
+                    if(usersService.findUsersByFilter(phoneParam, password) != null) {
+                        req.getSession().setAttribute("user", users);
+                        if(users.getRole_member() == 2){
+                            req.getSession().setAttribute("admin", "adminSession");
+                        }
+                        resp.sendRedirect(getServletContext().getContextPath());
                     }
-                    resp.sendRedirect(getServletContext().getContextPath());
+                    
                 }else {
                     errorMsg("Error at login", req, resp);
                 }

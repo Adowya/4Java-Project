@@ -26,4 +26,6 @@ public interface UsersDao {
     
     public Users findUsersByFilter(String phone, String password);
     
+    public Users findUsersByPhone(String phone);
+    
 }
