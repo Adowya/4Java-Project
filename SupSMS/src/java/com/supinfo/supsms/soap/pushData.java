@@ -5,6 +5,11 @@
  */
 package com.supinfo.supsms.soap;
 
+import com.supinfo.supsms.entity.Contact;
+import com.supinfo.supsms.entity.Sms;
+import com.supinfo.supsms.service.ContactService;
+import com.supinfo.supsms.service.SmsService;
+import javax.ejb.EJB;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -15,12 +20,20 @@ import javax.jws.WebParam;
  */
 @WebService(serviceName = "pushData")
 public class pushData {
-
+    
+    @EJB
+    private ContactService contactService;
+    
+    @EJB
+    private SmsService smsService;
     /**
      * This is a sample web service operation
      */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    @WebMethod(operationName = "all")
+    public boolean sync(Sms sms, Contact contact) {
+        
+        smsService.addSms(sms);
+        contactService.addContact(contact);
+        return true;
     }
 }
