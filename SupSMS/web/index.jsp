@@ -35,7 +35,7 @@
                                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                             </button>
                                                 <!--If!a!contact!is!deleted,!his!conversation!is!deleted.!-->
-                                            <button type="button" class="btn btn-danger">
+                                            <button onclick="window.location.href='contact?delete=${contact.id}';" type="button" class="btn btn-danger">
                                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                             </button>
                                         </div>

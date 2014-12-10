@@ -38,6 +38,7 @@ public class ConversationServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String error = req.getParameter("error");
         String param = req.getParameter("id");
+        String delete = req.getParameter("delete");
         
         Users user = (Users) req.getSession().getAttribute("user");
         List<Contact> contactList = contactService.findContactByFilter(user);
@@ -46,23 +47,40 @@ public class ConversationServlet extends HttpServlet {
         req.setAttribute("contactId", param);
         
         if(error == null){
-            
+            // View
             if(param!=null && !param.isEmpty()){
                 Long contactId = Long.valueOf(param);
                 Contact contact = contactService.findContactById(contactId);
-                List<Sms> smsList = smsService.findSmsByUserandContactId(user, contact);
-                req.setAttribute("sms", smsList);
+                if(contact != null){
+                    List<Sms> smsList = smsService.findSmsByUserandContactId(user, contact);
+                    req.setAttribute("sms", smsList);
+                    req.getRequestDispatcher("/jsp/conversation.jsp").forward(req, resp);
+                }else {
+                    resp.sendRedirect("./conversation?error="+true);
+                }
+            }else if(delete!=null && !delete.isEmpty()){
+                // Delete
+                Long contactId = Long.valueOf(delete);
+                Contact contact = contactService.findContactById(contactId);
                 
-                req.getRequestDispatcher("/jsp/conversation.jsp").forward(req, resp);
+                if(contact != null){
+                    List<Sms> smsList = smsService.findSmsByUserandContactId(user, contact);
+                    for(Sms sms : smsList) {
+                        smsService.removeSms(sms.getId());
+                    }
+                    resp.sendRedirect("./conversation?id=" + contactId);
+                }else {
+                    resp.sendRedirect("./conversation?error="+true);
+                }
             }else {
-                resp.sendRedirect("./conversation?error="+true);
+                req.getRequestDispatcher("/jsp/conversation.jsp").forward(req, resp);
             }
+            
             
         }else {
             req.setAttribute("errorMsg", "You don't have select contact");
             req.getRequestDispatcher("/jsp/conversation.jsp").forward(req, resp);
         }
-        
         
     }
     

@@ -29,11 +29,22 @@ public class InvoiceServlet  extends HttpServlet{
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String delete_param = req.getParameter("delete");
         Users user = (Users) req.getSession().getAttribute("user");
-        List<Invoice> invoiceList = invoiceService.findInvoiceByUserId(user);
-
-        req.setAttribute("invoice", invoiceList);
-        req.getRequestDispatcher("/jsp/invoice.jsp").forward(req, resp);
+        
+        if(delete_param!=null && !delete_param.isEmpty()){
+            Long invoiceId = Long.valueOf(delete_param);
+            Invoice invoice = invoiceService.findInvoiceById(invoiceId);
+            if(invoice != null){
+                invoiceService.removeInvoice(invoice.getId());
+            }
+            resp.sendRedirect("./invoice");
+        }else {
+            List<Invoice> invoiceList = invoiceService.findInvoiceByUserId(user);
+            req.setAttribute("invoice", invoiceList);
+            req.getRequestDispatcher("/jsp/invoice.jsp").forward(req, resp);
+        }
+        
     }
     
     

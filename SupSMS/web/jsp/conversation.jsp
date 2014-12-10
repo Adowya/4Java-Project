@@ -25,7 +25,7 @@
             <div class="row full-height">
                 <div class="col-lg-6 full-height">
                     <div class="conversation">
-                        <h1>Conversation<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></h1>
+                        <h1>Conversation<button onclick="window.location.href='conversation?delete=${contactId}';" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></h1>
                         <div class="progress">
                             <div id="progress-msg" class="progress-bar" role="progressbar">
                                 <span class="sr-only"></span>

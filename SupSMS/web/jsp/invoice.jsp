@@ -36,7 +36,7 @@
                                         <button onclick="window.location.href='edit_invoice?id=${invoice.id}';" type="button" class="btn btn-warning">
                                             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                         </button>
-                                        <button type="button" class="btn btn-danger">
+                                        <button onclick="window.location.href='invoice?delete=${invoice.id}';" type="button" class="btn btn-danger">
                                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                         </button>
                                     </td>

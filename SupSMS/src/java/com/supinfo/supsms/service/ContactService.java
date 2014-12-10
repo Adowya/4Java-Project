@@ -39,8 +39,8 @@ public class ContactService {
         return contactDao.updateContact(contact);
     }
     
-    public void removeContact(Contact findContactById){
-        contactDao.removeContact(findContactById);
+    public void removeContact(Long contact){
+        contactDao.removeContact(findContactById(contact));
     }
     
     public List<Contact> findContactByFilter(Users users){

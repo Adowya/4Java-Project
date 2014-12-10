@@ -25,7 +25,7 @@ public interface ContactDao {
     
     Contact updateContact(Contact contact);
     
-    public void removeContact(Contact findContactById);
+    public void removeContact(Contact contact);
     
     public List<Contact> findContactByFilter(Users users);
     

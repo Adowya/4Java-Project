@@ -54,8 +54,8 @@ public class JpaContactDao implements ContactDao{
     }
     
     @Override
-    public void removeContact(Contact findContactById) {
-        em.remove(findContactById);
+    public void removeContact(Contact contact) {
+        em.remove(contact);
     }
     
     @Override
