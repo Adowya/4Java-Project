@@ -36,20 +36,34 @@ public class ConversationServlet extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String error = req.getParameter("error");
         String param = req.getParameter("id");
+        
         Users user = (Users) req.getSession().getAttribute("user");
         List<Contact> contactList = contactService.findContactByFilter(user);
         
-        if(param!=null && !param.isEmpty()){
-            Long contactId = Long.valueOf(param);
-            Contact contact = contactService.findContactById(contactId);
-            List<Sms> smsList = smsService.findSmsByUserandContactId(user, contact);
-            req.setAttribute("sms", smsList);
-        }
-        
         req.setAttribute("contact", contactList);
         req.setAttribute("contactId", param);
-        req.getRequestDispatcher("/jsp/conversation.jsp").forward(req, resp);
+        
+        if(error == null){
+            
+            if(param!=null && !param.isEmpty()){
+                Long contactId = Long.valueOf(param);
+                Contact contact = contactService.findContactById(contactId);
+                List<Sms> smsList = smsService.findSmsByUserandContactId(user, contact);
+                req.setAttribute("sms", smsList);
+                
+                req.getRequestDispatcher("/jsp/conversation.jsp").forward(req, resp);
+            }else {
+                resp.sendRedirect("./conversation?error="+true);
+            }
+            
+        }else {
+            req.setAttribute("errorMsg", "You don't have select contact");
+            req.getRequestDispatcher("/jsp/conversation.jsp").forward(req, resp);
+        }
+        
+        
     }
     
     @Override
@@ -57,7 +71,7 @@ public class ConversationServlet extends HttpServlet {
         Users user = (Users) req.getSession().getAttribute("user");
         String param = req.getParameter("param");
         
-        if(param!=null && !param.isEmpty()){
+        if(param!=null && !param.isEmpty() && user.getFirst_name() != null){
             Long contactId = Long.valueOf(param);
             Contact contact = contactService.findContactById(contactId);
             
@@ -77,8 +91,8 @@ public class ConversationServlet extends HttpServlet {
             }
             
         }else {
-            System.out.print("param == null");
-            resp.sendRedirect("/conversation?id=" + req.getParameter("param"));
+            resp.sendRedirect("./conversation?error="+true);
+//            resp.sendRedirect(getServletContext().getContextPath());
         }
 //        resp.sendRedirect(getServletContext().getContextPath());
 //                resp.sendRedirect("../conversation?id=" + contactId);

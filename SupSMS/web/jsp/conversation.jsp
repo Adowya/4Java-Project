@@ -13,6 +13,14 @@
         <title>Conversation</title>
     </jsp:attribute>
     <jsp:body>
+        <c:choose>
+            <c:when test="${not empty errorMsg}">
+                <div class="alert alert-danger col-md-7 col-md-offset-3" style="z-index: 1000;margin-top: 10px;">
+                    ${errorMsg}
+                </div>
+            </c:when>
+            <c:otherwise></c:otherwise>
+        </c:choose>
         <div class="container no-padding-top">
             <div class="row full-height">
                 <div class="col-lg-6 full-height">
@@ -51,10 +59,20 @@
                     <ul class="widget-list" id="developers">
                         <c:forEach items="${contact}" var="contact">
                             <li>
-                                <a class="widget-list-link " href="conversation?id=${contact.id}" >
-                                    <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
-                                    ${contact.first_name}  ${contact.last_name}<span>${contact.phone}</span>
-                                </a>
+                                <c:choose>
+                                    <c:when test="${contactId == contact.id}">
+                                        <a class="widget-list-link active" href="conversation?id=${contact.id}" >
+                                            <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
+                                            ${contact.first_name}  ${contact.last_name}<span>${contact.phone}</span>
+                                        </a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a class="widget-list-link " href="conversation?id=${contact.id}" >
+                                            <img src="http://www.gravatar.com/avatar/6?f=y&amp;s=64&amp;d=identicon">
+                                            ${contact.first_name}  ${contact.last_name}<span>${contact.phone}</span>
+                                        </a>
+                                    </c:otherwise>
+                                </c:choose>
                                 <div title="Show contact card" class="edit-contact">
                                     <span class="glyphicon glyphicon-user"></span>
                                 </div>

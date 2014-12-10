@@ -41,7 +41,7 @@ public class UsersService {
         return usersDao.findUsersById(usersId);
     }
     
-    public List<Users>  findUsersByFilter(Long phone, String password) {
+    public Users findUsersByFilter(Long phone, String password) {
         return usersDao.findUsersByFilter(phone, password);
     }
     

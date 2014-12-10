@@ -65,7 +65,7 @@ input:focus, button:focus {
 }
 
 .conv {
-    border-left: solid 3px black;
+    border-left: solid 1px rgb(205, 205, 205);
 }
 
 .full-height {

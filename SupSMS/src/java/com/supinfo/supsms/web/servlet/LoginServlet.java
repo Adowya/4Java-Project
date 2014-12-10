@@ -56,17 +56,15 @@ public class LoginServlet extends HttpServlet {
                     }
                 }
                 
-                List<Users> usersList = usersService.findUsersByFilter(phone, passwordParam);
-                if(usersList.size() > 0){
-                    Users users = (Users) usersList.get(0);
+                Users users = usersService.findUsersByFilter(phone, passwordParam);
+                if(users != null){
                     req.getSession().setAttribute("user", users);
                     if(users.getRole_member() == 2){
-                        System.out.println("admin");
                         req.getSession().setAttribute("admin", "adminSession");
                     }
                     resp.sendRedirect(getServletContext().getContextPath());
                 }else {
-                    doGet(req, resp);
+                    errorMsg("Error at login", req, resp);
                 }
             }else {
                 errorMsg("Error at login", req, resp);

@@ -56,7 +56,7 @@ public class JpaUsersDao implements UsersDao {
     }
     
     @Override
-    public List<Users> findUsersByFilter(Long phone, String password) {
+    public Users findUsersByFilter(Long phone, String password) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Users> query = cb.createQuery(Users.class);
         Root<Users> users = query.from(Users.class);
@@ -66,16 +66,15 @@ public class JpaUsersDao implements UsersDao {
             predicates.add(
                     cb.equal(users.get("phone"), phone)
             );
-        }
-        
-        if(password != null) {
-            predicates.add(
-                    cb.equal(users.get("password"), password)
-            );
+            if(password != null) {
+                predicates.add(
+                        cb.equal(users.get("password"), password)
+                );
+            }
         }
         
         query.where(predicates.toArray(new Predicate[predicates.size()]));
-        return em.createQuery(query).getResultList();
+        return em.createQuery(query).getSingleResult();
     }
     
     
