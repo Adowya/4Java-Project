@@ -11,6 +11,7 @@ import com.supinfo.supsms.service.CustomerService;
 import com.supinfo.supsms.service.InvoiceService;
 import com.supinfo.supsms.service.UsersService;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.Date;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -29,7 +30,7 @@ public class RegisterServlet extends HttpServlet {
     @EJB
     private UsersService usersService;
     
-     @EJB
+    @EJB
     private InvoiceService invoiceService;
     
     @Override
@@ -46,8 +47,8 @@ public class RegisterServlet extends HttpServlet {
         users.setLast_name(req.getParameter("last_name"));
         users.setPassword(req.getParameter("password"));
         
-        Long phone = Long.parseLong(req.getParameter("phone"));
-        users.setPhone(phone);
+        users.setPhone(req.getParameter("phone"));
+        
         Long card = Long.parseLong(req.getParameter("card"));
         users.setCard(card);
         Long zip = Long.parseLong(req.getParameter("zip"));

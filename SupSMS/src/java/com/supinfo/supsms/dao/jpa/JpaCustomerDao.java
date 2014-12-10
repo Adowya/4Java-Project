@@ -52,7 +52,7 @@ public class JpaCustomerDao implements CustomerDao {
     }
     
     @Override
-    public List<Customer> findCustomerByFilter(Long CustomerPhoneLong) {
+    public List<Customer> findCustomerByFilter(String CustomerPhoneLong) {
 
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Customer> query = cb.createQuery(Customer.class);

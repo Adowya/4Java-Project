@@ -41,7 +41,7 @@ public abstract class Customer implements Serializable {
     
     @NotNull
     @Column(nullable=false)
-    private Long phone;
+    private String phone;
     
     @NotNull
     @Column(nullable=false)
@@ -111,14 +111,14 @@ public abstract class Customer implements Serializable {
     /**
      * @return the phone
      */
-    public Long getPhone() {
+    public String getPhone() {
         return phone;
     }
     
     /**
      * @param phone the phone to set
      */
-    public void setPhone(Long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
     

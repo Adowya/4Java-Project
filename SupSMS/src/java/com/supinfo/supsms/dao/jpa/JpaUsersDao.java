@@ -56,7 +56,7 @@ public class JpaUsersDao implements UsersDao {
     }
     
     @Override
-    public Users findUsersByFilter(Long phone, String password) {
+    public Users findUsersByFilter(String phone, String password) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Users> query = cb.createQuery(Users.class);
         Root<Users> users = query.from(Users.class);

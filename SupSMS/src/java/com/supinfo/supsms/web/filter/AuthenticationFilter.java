@@ -47,7 +47,6 @@ public class AuthenticationFilter implements Filter {
         
         String path = ((HttpServletRequest) request).getServletPath();
         if (excludeFromFilter(path)){
-            System.out.print(path);
             chain.doFilter(request, response);
         } else
         {

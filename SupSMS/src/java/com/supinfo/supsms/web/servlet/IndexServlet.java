@@ -66,8 +66,7 @@ public class IndexServlet extends HttpServlet {
         contact.setLast_name(req.getParameter("last_name"));
         contact.setEmail(req.getParameter("email"));
         
-        Long phone = Long.parseLong(req.getParameter("phone"));
-        contact.setPhone(phone);
+        contact.setPhone(req.getParameter("phone"));
         Long zip = Long.parseLong(req.getParameter("zip"));
         contact.setZip(zip);
         

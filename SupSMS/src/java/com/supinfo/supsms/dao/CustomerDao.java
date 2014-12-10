@@ -22,6 +22,6 @@ public interface CustomerDao {
 
     public void removeCustomer(Customer findCustomerById);
     
-    public List<Customer> findCustomerByFilter(Long CustomerPhoneLong);
+    public List<Customer> findCustomerByFilter(String CustomerPhoneLong);
     
 }

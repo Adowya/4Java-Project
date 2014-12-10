@@ -46,17 +46,7 @@ public class LoginServlet extends HttpServlet {
         
         if(phoneParam != null && !phoneParam.isEmpty()){
             if(passwordParam != null && !phoneParam.isEmpty()){
-                
-                Long phone = null;
-                if(!phoneParam.trim().isEmpty()) {
-                    try {
-                        phone = new Long(phoneParam);
-                    } catch (NumberFormatException e) {
-                        
-                    }
-                }
-                
-                Users users = usersService.findUsersByFilter(phone, passwordParam);
+                Users users = usersService.findUsersByFilter(phoneParam, passwordParam);
                 if(users != null){
                     req.getSession().setAttribute("user", users);
                     if(users.getRole_member() == 2){

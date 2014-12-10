@@ -95,10 +95,7 @@ public class ContactServlet extends HttpServlet {
             contact.setFirst_name(req.getParameter("first_name"));
             contact.setLast_name(req.getParameter("last_name"));
             contact.setEmail(req.getParameter("email"));
-            
-            String user_phone = req.getParameter("phone");
-            Long user_phone_long = Long.valueOf(user_phone);
-            contact.setPhone(user_phone_long);
+            contact.setPhone(req.getParameter("phone"));
             
             String user_zip = req.getParameter("zip");
             Long user_zip_long = Long.valueOf(user_zip);

@@ -51,9 +51,7 @@ public class ProfileServlet extends HttpServlet {
         Long user_card_long = Long.valueOf(user_card);
         users.setCard(user_card_long);
         
-        String user_phone = req.getParameter("user_phone");
-        Long user_phone_long = Long.valueOf(user_phone);
-        users.setPhone(user_phone_long);
+        users.setPhone(req.getParameter("user_phone"));
         
         usersService.updateUsers(users);
         

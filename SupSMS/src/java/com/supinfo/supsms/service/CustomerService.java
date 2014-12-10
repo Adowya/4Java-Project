@@ -37,7 +37,7 @@ public class CustomerService {
         return customerDao.findCustomerById(customerId);
     }
     
-    public List<Customer>  findCustomerByFilter(Long CustomerPhoneLong) {
+    public List<Customer>  findCustomerByFilter(String CustomerPhoneLong) {
         return customerDao.findCustomerByFilter(CustomerPhoneLong);
     }
     
