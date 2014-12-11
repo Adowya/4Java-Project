@@ -13,6 +13,14 @@
         <title>Profile</title>
     </jsp:attribute>
     <jsp:body>
+        <c:choose>
+            <c:when test="${not empty errorMsg}">
+                <div class="alert alert-danger col-md-7 col-md-offset-3" style="z-index: 1000;margin-top: 10px;">
+                    ${errorMsg}
+                </div>
+            </c:when>
+            <c:otherwise></c:otherwise>
+        </c:choose>
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-3 col-md-6 col-xs-12 col-sm-offset-1 col-sm-10 full-height">
@@ -68,7 +76,15 @@
                                         <span class="input-group-addon">
                                             <span style="color: #66afe9;" class="glyphicon glyphicon-lock" aria-hidden="true"></span> 
                                         </span>
-                                        <input type="password" value="${requestScope.user.password}" name="user_password" class="form-control">
+                                        <input type="password" value="" name="user_password" class="form-control">
+                                    </div>
+                                    <br />
+                                    <label>Confirm Password :</label>
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-addon">
+                                            <span style="color: #66afe9;" class="glyphicon glyphicon-lock" aria-hidden="true"></span> 
+                                        </span>
+                                        <input type="password" value="" name="user_confirm_password" class="form-control">
                                     </div>
                                     <br />
                                     <label>Credit card :</label>

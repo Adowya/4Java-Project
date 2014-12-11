@@ -6,10 +6,12 @@
 package com.supinfo.supsms.web.servlet;
 
 import com.supinfo.supsms.entity.Contact;
+import com.supinfo.supsms.entity.Invoice;
 import com.supinfo.supsms.entity.Sms;
 import com.supinfo.supsms.entity.Users;
 import com.supinfo.supsms.service.ContactService;
 import com.supinfo.supsms.service.CustomerService;
+import com.supinfo.supsms.service.InvoiceService;
 import com.supinfo.supsms.service.SmsService;
 import com.supinfo.supsms.service.UsersService;
 import java.io.IOException;
@@ -40,6 +42,9 @@ public class ManageUserServlet extends HttpServlet{
     @EJB
     private CustomerService customerService;
     
+    @EJB
+    private InvoiceService invoiceService;
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String delete = req.getParameter("delete");
@@ -56,6 +61,13 @@ public class ManageUserServlet extends HttpServlet{
                     for(Sms sms : smsList) {
                         smsService.removeSms(sms.getId());
                     }
+                    
+                    // Delete Invoice of User ID
+                    List<Invoice> invoiceList = invoiceService.findInvoiceByUserId(users);
+                    for(Invoice invoice : invoiceList) {
+                        invoiceService.removeInvoice(invoice.getId());
+                    }
+                    
                     // Delete Contact of User ID
                     List<Contact> contactList = contactService.findContactByFilter(users);
                     for(Contact contact : contactList){
@@ -64,6 +76,7 @@ public class ManageUserServlet extends HttpServlet{
                     
                     // Delete User for ID
                     usersService.removeUsers(users.getId());
+                    
                     resp.sendRedirect("./manage_user");
                 }else {
                     resp.sendRedirect(getServletContext().getContextPath());
@@ -71,11 +84,12 @@ public class ManageUserServlet extends HttpServlet{
             }else {
                 resp.sendRedirect(getServletContext().getContextPath());
             }
+        }else {
+            List<Users> usersList = usersService.getAllUsers();
+            req.setAttribute("users", usersList);
+            req.getRequestDispatcher("/jsp/admin/manage_user.jsp").forward(req, resp);
         }
         
-        List<Users> usersList = usersService.getAllUsers();
-        req.setAttribute("users", usersList);
-        req.getRequestDispatcher("/jsp/admin/manage_user.jsp").forward(req, resp);
     }
     
     

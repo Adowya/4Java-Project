@@ -8,7 +8,10 @@ package com.supinfo.supsms.web.servlet;
 import com.supinfo.supsms.entity.Users;
 import com.supinfo.supsms.service.UsersService;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,6 +34,12 @@ public class ProfileServlet extends HttpServlet {
         Users user = (Users) req.getSession().getAttribute("user");
         usersService.findUsersById(user.getId());
         req.setAttribute("user", user);
+        
+        String error = req.getParameter("error");
+        if(error != null){
+            req.setAttribute("errorMsg", "Both password are different");
+        }
+        
         req.getRequestDispatcher("/jsp/profile.jsp").forward(req, resp);
     }
     
@@ -41,7 +50,24 @@ public class ProfileServlet extends HttpServlet {
         users.setFirst_name(req.getParameter("user_first_name"));
         users.setLast_name(req.getParameter("user_last_name"));
         users.setEmail(req.getParameter("user_email"));
-        users.setPassword(req.getParameter("user_password"));
+        if(req.getParameter("user_password") != null){
+            System.out.print("001");
+            if(req.getParameter("user_confirm_password").equals(req.getParameter("user_password"))){
+                System.out.print("002");
+                // Sha256 Password
+                try {
+                    users.setSalt();
+                } catch (NoSuchAlgorithmException ex) {
+                    Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                String password = Users.get_SHA_256_SecurePassword(req.getParameter("user_password"),users.getSalt());
+                users.setPassword(password);
+            }else {
+                resp.sendRedirect(req.getContextPath() + "/profile?error="+true);
+                System.out.print("Exit");
+                return;
+            }
+        }
         
         String user_zip = req.getParameter("user_zip");
         Long user_zip_long = Long.valueOf(user_zip);
@@ -50,7 +76,6 @@ public class ProfileServlet extends HttpServlet {
         String user_card = req.getParameter("user_card");
         Long user_card_long = Long.valueOf(user_card);
         users.setCard(user_card_long);
-        
         users.setPhone(req.getParameter("user_phone"));
         
         usersService.updateUsers(users);

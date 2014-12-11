@@ -7,6 +7,7 @@ package com.supinfo.supsms.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -26,7 +27,7 @@ public class Contact extends Customer implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updated;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_users")
     private Users _users;
     
