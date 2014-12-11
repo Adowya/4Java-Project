@@ -77,9 +77,6 @@ public class IndexServlet extends HttpServlet {
         Users user = (Users) req.getSession().getAttribute("user");
         contact.setUsers(user);
         
-        System.out.println(contact.getEmail());
-        System.out.println(contact.getUpdated());
-        
         contactService.addContact(contact);
         resp.sendRedirect(getServletContext().getContextPath());
     }

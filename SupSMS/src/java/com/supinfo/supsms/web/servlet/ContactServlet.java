@@ -106,8 +106,6 @@ public class ContactServlet extends HttpServlet {
             contactService.updateContact(contact);
             
             resp.sendRedirect(req.getContextPath() + "/contact?id="+contactId);
-        }else {
-            System.out.print("param == null");
         }
     }
     

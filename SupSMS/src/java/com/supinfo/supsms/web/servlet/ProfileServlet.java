@@ -51,9 +51,7 @@ public class ProfileServlet extends HttpServlet {
         users.setLast_name(req.getParameter("user_last_name"));
         users.setEmail(req.getParameter("user_email"));
         if(req.getParameter("user_password") != null){
-            System.out.print("001");
             if(req.getParameter("user_confirm_password").equals(req.getParameter("user_password"))){
-                System.out.print("002");
                 // Sha256 Password
                 try {
                     users.setSalt();
@@ -64,7 +62,6 @@ public class ProfileServlet extends HttpServlet {
                 users.setPassword(password);
             }else {
                 resp.sendRedirect(req.getContextPath() + "/profile?error="+true);
-                System.out.print("Exit");
                 return;
             }
         }
