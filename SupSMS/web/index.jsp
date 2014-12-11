@@ -1,8 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : Jan 6, 2012, 7:10:18 PM
-    Author     : bargenson
---%>
     
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>

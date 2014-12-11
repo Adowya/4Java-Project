@@ -34,7 +34,7 @@
                                     <td>${users.first_name}</td>
                                     <td>
                                         
-                                        <button type="button" class="btn btn-danger">
+                                        <button type="button" onclick="window.location.href='manage_user?delete=${users.id}';" class="btn btn-danger">
                                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                         </button>
                                     </td>

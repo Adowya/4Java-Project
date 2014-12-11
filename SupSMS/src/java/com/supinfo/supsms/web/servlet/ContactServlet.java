@@ -88,7 +88,6 @@ public class ContactServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String param = req.getParameter("contact_id");
         if(param!=null && !param.isEmpty()){
-            System.out.print(param);
             Long contactId = Long.valueOf(param);
             Contact contact = contactService.findContactById(contactId);
             
