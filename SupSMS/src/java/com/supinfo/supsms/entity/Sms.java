@@ -33,10 +33,10 @@ public class Sms implements Serializable {
     private Long id;
     private String text;
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "fk_contact")
     private Contact _contact;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "fk_users")
     private Users _users;
     

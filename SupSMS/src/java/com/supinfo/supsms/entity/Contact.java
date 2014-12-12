@@ -27,7 +27,7 @@ public class Contact extends Customer implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updated;
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "fk_users")
     private Users _users;
     
